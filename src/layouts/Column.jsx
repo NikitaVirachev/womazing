@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { stylesheet } from 'astroturf';
+import styled from 'styled-components';
 
-const styles = stylesheet`
-  .column {
-  }
+const Wrapper = styled.div`
+  margin: 0 auto;
+  width: 1100px;
 `;
 
 const Column = ({ children }) => {
-  return <div className={styles.column}>{children}</div>;
+  return <Wrapper>{children}</Wrapper>;
 };
 
 Column.propTypes = {

@@ -106,10 +106,6 @@ module.exports = {
               presets: ['@babel/preset-env', '@babel/preset-react'],
             },
           },
-          {
-            loader: 'astroturf/loader',
-            options: { extension: '.module.scss' },
-          },
         ],
       },
     ],
