@@ -35,6 +35,7 @@ module.exports = {
     }),
     new ESLintPlugin({
       extensions: ['js', 'jsx'],
+      exclude: 'node_modules',
       context: 'src',
       fix: true,
     }),
