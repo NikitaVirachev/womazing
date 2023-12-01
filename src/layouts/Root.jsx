@@ -1,7 +1,7 @@
 import React from 'react';
 
-const App = () => {
+const Root = () => {
   return <p>Hello world!</p>;
 };
 
-export default App;
+export default Root;
