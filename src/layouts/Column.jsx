@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  width: 1100px;
+  max-width: 110rem;
 `;
 
 const Column = ({ children }) => {
