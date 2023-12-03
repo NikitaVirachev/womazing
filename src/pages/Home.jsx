@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Hero from '../layouts/Hero.jsx';
+import Hero from '../components/Hero/Hero.jsx';
 
 const Home = () => {
   return (
