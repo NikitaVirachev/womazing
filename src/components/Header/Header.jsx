@@ -15,6 +15,7 @@ const HeaderContainer = styled.div`
   align-items: center;
 
   position: absolute;
+  z-index: 100;
   top: 5.1rem;
   left: 50%;
   transform: translateX(-50%);

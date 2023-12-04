@@ -5,6 +5,10 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   margin: 0 auto;
   max-width: 110rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 13rem;
 `;
 
 const Column = ({ children }) => {
