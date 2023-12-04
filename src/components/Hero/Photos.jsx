@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import MainPhotosURL from '../../assets/img/pictures/main-photos.jpg';
+import { useSelector } from 'react-redux';
+
+import MainPhotos1URL from '../../assets/img/pictures/main-photos-1.jpg';
+import MainPhotos2URL from '../../assets/img/pictures/main-photos-2.jpg';
+import MainPhotos3URL from '../../assets/img/pictures/main-photos-3.jpg';
 import SecondaryPhotosURL from '../../assets/img/pictures/secondary-photos.jpg';
 import TertiaryPhotosURL from '../../assets/img/pictures/tertiary-photos.jpg';
 
@@ -10,10 +14,20 @@ const PhotosContainer = styled.div`
   position: relative;
 `;
 
-const MainPhotosContainer = styled.div`
+const MainPhotosWindow = styled.div`
   width: 41rem;
   height: 64.6rem;
   overflow: hidden;
+  position: relative;
+`;
+
+const Slides = styled.div`
+  display: flex;
+
+  position: absolute;
+  transition: transform 0.5s ease;
+  transform: ${({ $currentSlide }) =>
+    `translateX(calc(${$currentSlide - 1} * -43.4rem))`};
 `;
 
 const MainPhotos = styled.div`
@@ -65,11 +79,17 @@ const TertiaryPhotos = styled.div`
 `;
 
 const Photos = () => {
+  const curSlide = useSelector((state) => state.heroSlider.currentSlide);
+
   return (
     <PhotosContainer>
-      <MainPhotosContainer>
-        <MainPhotos $url={MainPhotosURL} />
-      </MainPhotosContainer>
+      <MainPhotosWindow>
+        <Slides $currentSlide={curSlide}>
+          <MainPhotos $url={MainPhotos1URL} />
+          <MainPhotos $url={MainPhotos2URL} />
+          <MainPhotos $url={MainPhotos3URL} />
+        </Slides>
+      </MainPhotosWindow>
       <SecondaryPhotosContainer>
         <SecondaryPhotos $url={SecondaryPhotosURL} />
       </SecondaryPhotosContainer>

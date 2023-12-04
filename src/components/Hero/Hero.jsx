@@ -7,10 +7,9 @@ import Photos from './Photos.jsx';
 
 const HeroWrapper = styled.div`
   background: linear-gradient(to right, white 55%, #f1eadc 45%);
-  ${'' /* height: 82.6rem; */}
 `;
 
-const HeroContainer = styled.div`
+const HeroContainer = styled.section`
   display: grid;
   grid-template-columns: 58.7% 41.3%;
 `;

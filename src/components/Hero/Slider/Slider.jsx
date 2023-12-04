@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
 import Indicator from './Indicator.jsx';
 import ButtonCTA from '../../ButtonCTA.jsx';
 import ArrowDawn from './ArrowDawn.jsx';
-
-const SlidesCount = 3;
+import { heroSliderActions } from '../../../hooks/heroSliderSlice.jsx';
 
 const SliderContainer = styled.div`
   margin-top: 26.5rem;
@@ -77,7 +77,9 @@ const Description = styled.p`
 `;
 
 const Slider = () => {
-  const [curSlide, setCurSlide] = useState(1);
+  const dispatch = useDispatch();
+  const curSlide = useSelector((state) => state.heroSlider.currentSlide);
+  const slidesCount = useSelector((state) => state.heroSlider.slidesCount);
 
   return (
     <SliderContainer>
@@ -113,8 +115,10 @@ const Slider = () => {
       <IndicatorWrapper>
         <Indicator
           curRectangle={curSlide}
-          onChangeSlide={(slide) => setCurSlide(slide)}
-          slidesCount={SlidesCount}
+          onChangeSlide={(slide) =>
+            dispatch(heroSliderActions.setCurrentSlide(slide))
+          }
+          slidesCount={slidesCount}
         />
       </IndicatorWrapper>
     </SliderContainer>
