@@ -13,6 +13,13 @@
       "cost": 30,
       "discount": "",
       "url": "https://images.pexels.com/photos/5256109/pexels-photo-5256109.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    },
+    {
+      "id": 3,
+      "name": "t-shirt",
+      "cost": 30,
+      "discount": "15",
+      "url": "https://images.pexels.com/photos/2698844/pexels-photo-2698844.jpeg?auto=compress&cs=tinysrgb&w=1600"
     }
   ]
 }
