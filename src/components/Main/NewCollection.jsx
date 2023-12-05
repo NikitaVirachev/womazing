@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import useHTTP from '../../hooks/useHTTP.jsx';
 import { clothesURL } from '../../db/constants.js';
 
 import ButtonCTA from '../ButtonCTA.jsx';
+import Product from '../Products/Product.jsx';
 
 const NewCollectionContainer = styled.div`
   display: flex;
@@ -23,10 +24,16 @@ const ButtonCTAContainer = styled.div`
 
 const NewCollection = () => {
   const { getJSON } = useHTTP();
+  const [clothes, setClothes] = useState(null);
 
   useEffect(() => {
-    const clothes = getJSON(clothesURL);
-    console.log(clothes);
+    const showClothes = (data) => {
+      console.log(data);
+      setClothes(data);
+    };
+
+    const url = `${clothesURL}?_start=0&_end=3`;
+    getJSON(url, 'Couldn\'t get clothes', showClothes);
   }, []);
 
   const navigate = useNavigate();
@@ -37,7 +44,18 @@ const NewCollection = () => {
 
   return (
     <NewCollectionContainer>
-      <Goods></Goods>
+      <Goods>
+        {clothes &&
+          clothes.map((item) => (
+            <Product
+              key={item.id}
+              name={item.name}
+              cost={String(item.cost)}
+              discount={String(item.discount)}
+              url={item.url}
+            />
+          ))}
+      </Goods>
       <ButtonCTAContainer>
         <ButtonCTA $isOutline={true} onClick={btnClickHandler}>
           Открыть магазин

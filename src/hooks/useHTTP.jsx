@@ -4,12 +4,13 @@ const useHTTP = () => {
   const [isLoading, setIsLoading] = useState(null);
   const [error, setError] = useState(null);
 
-  const getJSON = async (url, errorMsg = 'Something went wrong') => {
+  const getJSON = async (url, errorMsg = 'Something went wrong', consume) => {
     setIsLoading(true);
     try {
       const response = await fetch(url);
       if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);
-      return await response.json();
+      const data = await response.json();
+      consume(data);
     } catch (error) {
       setError(error);
     }
