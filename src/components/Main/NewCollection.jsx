@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+import useHTTP from '../../hooks/useHTTP.jsx';
+import { clothesURL } from '../../db/constants.js';
 
 import ButtonCTA from '../ButtonCTA.jsx';
 
@@ -20,19 +22,11 @@ const ButtonCTAContainer = styled.div`
 `;
 
 const NewCollection = () => {
+  const { getJSON } = useHTTP();
+
   useEffect(() => {
-    const getJSON = async () => {
-      try {
-        const request = await fetch(
-          'https://clothing-store-b6dd6-default-rtdb.europe-west1.firebasedatabase.app/clothes.json'
-        );
-        const data = await request.json();
-        console.log(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    getJSON();
+    const clothes = getJSON(clothesURL);
+    console.log(clothes);
   }, []);
 
   const navigate = useNavigate();
