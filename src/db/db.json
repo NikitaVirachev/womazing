@@ -1,0 +1,18 @@
+{
+  "clothes": [
+    {
+      "id": 1,
+      "name": "sweatshirt",
+      "cost": 50,
+      "discount": 10,
+      "url": "https://images.pexels.com/photos/6626903/pexels-photo-6626903.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    },
+    {
+      "id": 2,
+      "name": "women's top",
+      "cost": 30,
+      "discount": "",
+      "url": "https://images.pexels.com/photos/5256109/pexels-photo-5256109.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    }
+  ]
+}

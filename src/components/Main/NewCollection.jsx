@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
@@ -20,6 +20,21 @@ const ButtonCTAContainer = styled.div`
 `;
 
 const NewCollection = () => {
+  useEffect(() => {
+    const getJSON = async () => {
+      try {
+        const request = await fetch(
+          'https://clothing-store-b6dd6-default-rtdb.europe-west1.firebasedatabase.app/clothes.json'
+        );
+        const data = await request.json();
+        console.log(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    getJSON();
+  }, []);
+
   const navigate = useNavigate();
 
   const btnClickHandler = () => {
