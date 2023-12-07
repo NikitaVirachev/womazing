@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import Indicator from '../Slider/Indicator.jsx';
 import slideURL1 from '../../assets/img/pictures/slider-1.jpg';
@@ -7,13 +7,16 @@ import slideURL2 from '../../assets/img/pictures/slider-2.jpg';
 import slideURL3 from '../../assets/img/pictures/slider-3.jpg';
 import Arrow from '../Slider/Arrow.jsx';
 
+const WIDTH = '72.9rem';
+const HEIGHT = '48.7rem';
+
 const SliderContainer = styled.div`
   position: relative;
 `;
 
 const SliderWindow = styled.div`
-  width: 72.9rem;
-  height: 48.7rem;
+  width: ${WIDTH};
+  height: ${HEIGHT};
   overflow: hidden;
 
   position: relative;
@@ -25,12 +28,12 @@ const Slides = styled.div`
   position: absolute;
   transition: transform 0.5s ease;
   transform: ${({ $currentSlide }) =>
-    `translateX(calc(${$currentSlide - 1} * -72.9rem))`};
+    `translateX(calc(${$currentSlide - 1} * -${WIDTH}))`};
 `;
 
 const Slide = styled.div`
-  width: 72.9rem;
-  height: 48.7rem;
+  width: ${WIDTH};
+  height: ${HEIGHT};
 
   background: url(${(props) => (props.$url ? props.$url : '')}) center/cover
     no-repeat;
@@ -43,19 +46,21 @@ const IndicatorContainer = styled.div`
   left: 30.8rem;
 `;
 
-const LeftArrow = styled.div`
+const StyledArrow = css`
   position: absolute;
   z-index: 50;
-  left: -6.1rem;
   bottom: 24.8rem;
 `;
 
+const LeftArrow = styled.div`
+  ${StyledArrow};
+  left: -6.1rem;
+`;
+
 const RightArrow = styled.div`
-  position: absolute;
-  z-index: 50;
+  ${StyledArrow};
   transform: rotate(180deg);
   right: -5.9rem;
-  bottom: 24.8rem;
 `;
 
 const slidesCount = 3;
