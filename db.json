@@ -6,7 +6,7 @@
       "cost": 50,
       "discount": 10,
       "type": "sweatshirt",
-      "url": "gs://womazing-217a2.appspot.com/clothes/hoodie1.jpg"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Свитшот BFF.jpg"
     },
     {
       "id": 2,
@@ -14,15 +14,15 @@
       "cost": 90,
       "discount": null,
       "type": "coat",
-      "url": "https://img.freepik.com/free-photo/beautiful-fashion-woman-posing-with-elegant-suit_1328-3305.jpg?w=740&t=st=1701778724~exp=1701779324~hmac=b3266d084e0959ccec85138102cd880e5e6c93195ba48e6d398781ebd48f0941"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Пальто Stefanel.jpg"
     },
     {
       "id": 3,
-      "name": "black t-shirt",
+      "name": "Футболка Butter Goods",
       "cost": 30,
       "discount": 15,
       "type": "t-shirt",
-      "url": "https://img.freepik.com/free-psd/front-view-woman-with-blank-shirt_23-2150182690.jpg?w=740&t=st=1701778505~exp=1701779105~hmac=07ec1a9510127ab3b8676d551674930ddcffa11ac4427c1be932493fcbf3f03a"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Футболка Butter Goods.jpg"
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "cost": 100,
       "discount": 15,
       "type": "coat",
-      "url": "https://img.freepik.com/free-photo/stylish-adult-male-posing-with-sunglasses-and-gloves_23-2148466089.jpg?w=740&t=st=1701778863~exp=1701779463~hmac=9e80eb408b3f7d4c566bd900384fe4c1086d0ec40eae6ed556e73aac9e299d28"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Пальто мужское Esprit.jpg"
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "cost": 120,
       "discount": null,
       "type": "coat",
-      "url": "https://img.freepik.com/free-photo/young-woman-wearing-grey-coat-and-walking-in-the-street-and-using-phone_1303-26384.jpg?w=740&t=st=1701779010~exp=1701779610~hmac=f3ba5f90bf3a3987b0b8525504e4d74919405ef3d4283eacc75dd6816cd86cf0"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Пальто женское SOFT&SPICY.jpg"
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "cost": 120,
       "discount": null,
       "type": "coat",
-      "url": "https://img.freepik.com/free-photo/young-woman-model-wearing-long-gray-coat_1303-21156.jpg?w=740&t=st=1701779166~exp=1701779766~hmac=86b42bf01403f39d154a7ee68813cc710cfd85f76c66a16e69ebddaa60676523"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Пальто Caren Luis.jpg"
     },
     {
       "id": 7,
@@ -54,7 +54,7 @@
       "cost": 100,
       "discount": 15,
       "type": "coat",
-      "url": "https://img.freepik.com/free-photo/portrait-young-handsome-male_23-2148884404.jpg?w=740&t=st=1701779327~exp=1701779927~hmac=a4b3c3228b70c6c7de27bf1cc346f8d2b2c68d2f864582506305f6cb4faacd1e"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Пальто Tosato.jpg"
     },
     {
       "id": 8,
@@ -62,7 +62,7 @@
       "cost": 170,
       "discount": null,
       "type": "coat",
-      "url": "https://img.freepik.com/free-photo/young-serious-stylish-man-in-beige-coat-confidently-looking-in-camera-outdoor_574295-1374.jpg?w=740&t=st=1701779417~exp=1701780017~hmac=b5bfcc3e1cb317f86c21fec15dced2374248426cc0ad854a650e6cbf6f71dd20"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Пальто LCW Casual.jpg"
     },
     {
       "id": 9,
@@ -70,7 +70,7 @@
       "cost": 100,
       "discount": 10,
       "type": "coat",
-      "url": "https://img.freepik.com/free-photo/young-handsome-man-in-a-street-outfit_1303-19656.jpg?w=740&t=st=1701779476~exp=1701780076~hmac=79de62031c29dea59fd6e68a845c9c389bfd00714a0bb4bdb5e0c6dfb5cd6447"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Пальто EL PODIO.jpg"
     },
     {
       "id": 10,
@@ -78,7 +78,7 @@
       "cost": 160,
       "discount": null,
       "type": "coat",
-      "url": "https://img.freepik.com/free-photo/portrait-of-handsome-fashion-stylish-hipster-model-dressed-in-warm-overcoat-posing-in-studio_158538-11460.jpg?w=740&t=st=1701779553~exp=1701780153~hmac=32e314cd3bda5d8e15da012a5ba6b96767697146bd97a5b69da41358c1f4cb88"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Пальто MEYEL.jpg"
     },
     {
       "id": 11,
@@ -86,7 +86,7 @@
       "cost": 70,
       "discount": 15,
       "type": "sweatshirt",
-      "url": "https://img.freepik.com/free-photo/man-in-black-sweater-and-black-bucket-hat-youth-apparel-shoot_53876-102294.jpg?w=740&t=st=1701779733~exp=1701780333~hmac=acc3ef5110fa3e0ca10e925b1d7b485710ef70af4fccb31762b5971824db14b9"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Свитшот BNC Inspire.jpg"
     },
     {
       "id": 12,
@@ -94,7 +94,7 @@
       "cost": 75,
       "discount": 15,
       "type": "sweatshirt",
-      "url": "https://img.freepik.com/free-photo/skater-wearing-trucker-hat_23-2149431167.jpg?w=740&t=st=1701780179~exp=1701780779~hmac=1dbf11413f3d75be04853115ec518fcf3e642c68096cebf98de841353120bc04"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Свитшот Grasser.jpg"
     },
     {
       "id": 13,
@@ -102,7 +102,7 @@
       "cost": 70,
       "discount": null,
       "type": "sweatshirt",
-      "url": "https://img.freepik.com/free-photo/close-up-portrait-of-man-in-shirt-mockup_23-2149260949.jpg?w=740&t=st=1701780231~exp=1701780831~hmac=1ad23fd69014fd4837d703a38d96cfd73384ecf46760b7cc620c762929f1b9ba"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Свитшот Simple.jpg"
     },
     {
       "id": 14,
@@ -110,7 +110,7 @@
       "cost": 65,
       "discount": null,
       "type": "sweatshirt",
-      "url": "https://img.freepik.com/free-photo/stretching_23-2148023820.jpg?w=740&t=st=1701780276~exp=1701780876~hmac=7bbf131930415f89ab19131c263e1b7ddc7d9f816e88db83f68257d7198cace1"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Свитшот GJO.E.jpg"
     },
     {
       "id": 15,
@@ -118,7 +118,7 @@
       "cost": 75,
       "discount": null,
       "type": "sweatshirt",
-      "url": "https://img.freepik.com/free-photo/low-angle-rebel-teen-on-skateboard_23-2149854359.jpg?w=740&t=st=1701780342~exp=1701780942~hmac=cddf92c7f5aa7b359a7ccc7294bd639fa38abc64063a40b20a5d0762bddd9360"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Свитшот Fresh Blossom.jpg"
     },
     {
       "id": 16,
@@ -126,7 +126,7 @@
       "cost": 55,
       "discount": 15,
       "type": "cardigan",
-      "url": "https://img.freepik.com/free-photo/browneyed-brunette-asian-woman-in-beige-pants-white-tshirt-and-stylish-cardigan-sits-on-soft-striped-classic-armchair_197531-27879.jpg?w=740&t=st=1701780433~exp=1701781033~hmac=a217242e57cf7d2e4a4b1e89265d4a06cbb00289dc4a315e41c3a21389ea7972"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Кардиган WoolOvers.jpg"
     },
     {
       "id": 17,
@@ -134,7 +134,7 @@
       "cost": 55,
       "discount": null,
       "type": "cardigan",
-      "url": "https://img.freepik.com/free-photo/smiling-woman-standing-near-house_250224-214.jpg?w=740&t=st=1701780596~exp=1701781196~hmac=76feaf748bcff6b0d50bced672f1304e8edec51d94708bfe0bea328927becca5"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Кардиган Reserved.jpg"
     },
     {
       "id": 18,
@@ -142,7 +142,7 @@
       "cost": 65,
       "discount": 5,
       "type": "cardigan",
-      "url": "https://img.freepik.com/free-photo/shallow-focus-shot-of-a-young-and-attractive-male_181624-42465.jpg?w=740&t=st=1701780647~exp=1701781247~hmac=90b76cc198a094b4681805db29dc74697b02f85f3e40bb6bdddb13d63d72d18a"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Кардиган ZEYUKO.jpg"
     },
     {
       "id": 19,
@@ -150,7 +150,7 @@
       "cost": 45,
       "discount": 15,
       "type": "t-shirt",
-      "url": "https://img.freepik.com/free-photo/young-handsome-man-posing-in-quarry_1303-28636.jpg?w=740&t=st=1701780930~exp=1701781530~hmac=eca860c1b753c23aeda5683af0d648394020b307cc197fdcb166076fb4a4da66"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Футболка THE TASTE.jpg"
     },
     {
       "id": 20,
@@ -158,7 +158,7 @@
       "cost": 40,
       "discount": 15,
       "type": "t-shirt",
-      "url": "https://img.freepik.com/free-psd/front-view-beautiful-woman-posing_23-2150182710.jpg?w=740&t=st=1701780939~exp=1701781539~hmac=117b385ceb1831a8bcf2304a5514dacda2c22f853a746f5c72ef974a0ce747bf"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Футболка FINN FLARE.jpg"
     },
     {
       "id": 21,
@@ -166,7 +166,7 @@
       "cost": 40,
       "discount": null,
       "type": "t-shirt",
-      "url": "https://img.freepik.com/free-photo/pretty-woman-wearing-tshirt_1303-14641.jpg?w=740&t=st=1701780960~exp=1701781560~hmac=305dc4e88fd4d9da90ed1166551da9e65bfd5689d688c1fb3e27ddf240384a78"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Футболка BIZONDA.jpg"
     },
     {
       "id": 22,
@@ -174,7 +174,7 @@
       "cost": 35,
       "discount": null,
       "type": "t-shirt",
-      "url": "https://img.freepik.com/free-psd/t-shirt-mockup-design_15879-478.jpg?w=740&t=st=1701780969~exp=1701781569~hmac=7b777a09f509e93271169435b1d5642ac1b6c573755d8a09653c9240b75677fa"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Футболка Burberry.jpg"
     },
     {
       "id": 23,
@@ -182,7 +182,7 @@
       "cost": 60,
       "discount": null,
       "type": "t-shirt",
-      "url": "https://img.freepik.com/free-photo/teenage-boy-in-white-tee-basic-youth-apparel-shoot_53876-102954.jpg?w=740&t=st=1701781183~exp=1701781783~hmac=76f1db6ea22c808d8f9da8b299264ef6d890f8263deff64b452984e1f814a7c6"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Футболка SOLS.jpg"
     },
     {
       "id": 24,
@@ -190,7 +190,7 @@
       "cost": 70,
       "discount": 50,
       "type": "t-shirt",
-      "url": "https://img.freepik.com/free-photo/african-american-man-in-black-t-shirt-outdoors_53876-97162.jpg?w=740&t=st=1701781260~exp=1701781860~hmac=08f7f0b106b9a7bbe78d87372324f8b074e4f04af99796cb0f3b52a9a93e89b2"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Футболка Lichi.jpg"
     },
     {
       "id": 25,
@@ -198,7 +198,7 @@
       "cost": 50,
       "discount": 25,
       "type": "t-shirt",
-      "url": "https://img.freepik.com/free-photo/young-man-with-a-bike-in-the-city_23-2149003790.jpg?w=740&t=st=1701781318~exp=1701781918~hmac=5192dae5284dbc62d0a6c210dd95c255f90455f51a390054f946fc75c4cb7cd0"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Футболка Serpents.jpg"
     },
     {
       "id": 26,
@@ -206,7 +206,7 @@
       "cost": 45,
       "discount": 5,
       "type": "t-shirt",
-      "url": "https://img.freepik.com/free-photo/bearded-man-standing-against-white-backdrop_23-2148176636.jpg?w=740&t=st=1701781391~exp=1701781991~hmac=9d62c2e0cfa2570dc4d9ba2fdbfe1283dc0ac5080e4f231af10e3461803da602"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Футболка UZcotton.jpg"
     },
     {
       "id": 27,
@@ -214,7 +214,39 @@
       "cost": 45,
       "discount": null,
       "type": "t-shirt",
-      "url": "https://img.freepik.com/free-photo/portrait-of-handsome-asian-man-posing-outdoors-in-the-city-with-headphones_23-2149086959.jpg?w=740&t=st=1701781455~exp=1701782055~hmac=6d62c5f1b5636bd7f0a41626a9c9d8b915d67a21a99194792d1b2b1e9a680573"
+      "url": "gs://womazing-217a2.appspot.com/clothes/Футболка Indiwd.jpg"
+    },
+    {
+      "id": 28,
+      "name": "Кардиган H&M",
+      "cost": 45,
+      "discount": 15,
+      "type": "cardigan",
+      "url": "gs://womazing-217a2.appspot.com/clothes/Кардиган H&M.jpg"
+    },
+    {
+      "id": 29,
+      "name": "Кардиган VERONA",
+      "cost": 40,
+      "discount": null,
+      "type": "cardigan",
+      "url": "gs://womazing-217a2.appspot.com/clothes/Кардиган VERONA.jpg"
+    },
+    {
+      "id": 30,
+      "name": "Пальто UNIQLO",
+      "cost": 40,
+      "discount": null,
+      "type": "coat",
+      "url": "gs://womazing-217a2.appspot.com/clothes/Пальто UNIQLO.jpg"
+    },
+    {
+      "id": 31,
+      "name": "Пальто Sorelle",
+      "cost": 40,
+      "discount": null,
+      "type": "coat",
+      "url": "gs://womazing-217a2.appspot.com/clothes/Пальто Sorelle.jpg"
     }
   ]
 }
