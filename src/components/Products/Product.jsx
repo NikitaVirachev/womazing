@@ -130,8 +130,8 @@ const Product = (props) => {
       <Description>
         <Title>{props.name}</Title>
         <Costs>
-          {props.discount && <OldCost>{`$${props.cost}`}</OldCost>}
-          {props.discount ? (
+          {props.discount !== 'null' && <OldCost>{`$${props.cost}`}</OldCost>}
+          {props.discount !== 'null' ? (
             <NewCost>{`$${props.cost - props.discount}`}</NewCost>
           ) : (
             <NewCost>{`$${props.cost}`}</NewCost>
