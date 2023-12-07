@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-import Indicator from './Indicator.jsx';
+import Indicator from '../../Slider/Indicator.jsx';
 import ButtonCTA from '../../ButtonCTA.jsx';
 import ArrowDawn from './ArrowDawn.jsx';
 import { heroSliderActions } from '../../../hooks/heroSliderSlice.jsx';
@@ -119,6 +119,8 @@ const Slider = () => {
             dispatch(heroSliderActions.setCurrentSlide(slide))
           }
           slidesCount={slidesCount}
+          mainColor="#d1d1d1"
+          activeColor="#000"
         />
       </IndicatorWrapper>
     </SliderContainer>
