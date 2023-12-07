@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
+
 import useHTTP from '../../hooks/useHTTP.jsx';
 import { clothesURL } from '../../db/constants.js';
-
 import ButtonCTA from '../ButtonCTA.jsx';
 import Product from '../Products/Product.jsx';
 
@@ -28,7 +28,7 @@ const NewCollection = () => {
 
   useEffect(() => {
     const showClothes = (data) => setClothes(data);
-    const url = `${clothesURL}?_start=0&_end=3`;
+    const url = `${clothesURL}?_start=0&_end=1`;
     getJSON(url, 'Couldn\'t get clothes', showClothes);
   }, []);
 

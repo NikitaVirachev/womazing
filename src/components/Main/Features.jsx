@@ -29,11 +29,6 @@ const Icon = styled.div`
   width: ${(props) => (props.$width ? props.$width : '')};
   height: ${(props) => (props.$height ? props.$height : '')};
   position: absolute;
-  ${
-  '' /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-}
   top: ${(props) => (props.$top ? props.$top : '')};
   right: ${(props) => (props.$right ? props.$right : '')};
 `;

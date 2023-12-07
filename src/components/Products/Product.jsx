@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { useNavigate } from 'react-router';
+import { ref, getDownloadURL } from 'firebase/storage';
 
 import overlaArrowURL from '../../assets/img/icons/overlay-arrow.svg';
+import { storage } from '../../libs/firebase';
 
 const ProductContainer = styled.div`
   display: flex;
@@ -78,7 +80,42 @@ const NewCost = styled.span`
 `;
 
 const Product = (props) => {
+  const [url, setUrl] = useState(null);
   const navigate = useNavigate();
+
+  const urlDB = props.url;
+
+  useEffect(() => {
+    const getImgURL = async (urlDB) => {
+      const gsReference = ref(storage, urlDB);
+
+      try {
+        const url = await getDownloadURL(gsReference);
+        setUrl(url);
+      } catch (error) {
+        // A full list of error codes is available at
+        // https://firebase.google.com/docs/storage/web/handle-errors
+        switch (error.code) {
+        case 'storage/object-not-found':
+          // File doesn't exist
+          break;
+        case 'storage/unauthorized':
+          // User doesn't have permission to access the object
+          break;
+        case 'storage/canceled':
+          // User canceled the upload
+          break;
+
+          // ...
+
+        case 'storage/unknown':
+          // Unknown error occurred, inspect the server response
+          break;
+        }
+      }
+    };
+    getImgURL(urlDB);
+  }, [urlDB]);
 
   const imageClickHandler = () => {
     navigate('/item');
@@ -87,7 +124,7 @@ const Product = (props) => {
   return (
     <ProductContainer>
       <ImageContainer onClick={imageClickHandler}>
-        <Img src={props.url} alt={props.name} />
+        {url && <Img src={url} alt={props.name} />}
         <Overlay $url={overlaArrowURL} />
       </ImageContainer>
       <Description>
