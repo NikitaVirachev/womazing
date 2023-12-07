@@ -29,14 +29,18 @@ const ImageContainer = styled.div`
   position: relative;
   cursor: pointer;
 
+  width: 35rem;
+  height: 47.8rem;
+  background: #999;
+
   &:hover ${Overlay} {
     opacity: 1;
   }
 `;
 
 const Img = styled.img`
-  width: 35rem;
-  height: 47.8rem;
+  width: 100%;
+  height: 100%;
 `;
 
 const Description = styled.div`
