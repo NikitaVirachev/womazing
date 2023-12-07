@@ -27,11 +27,7 @@ const NewCollection = () => {
   const [clothes, setClothes] = useState(null);
 
   useEffect(() => {
-    const showClothes = (data) => {
-      console.log(data);
-      setClothes(data);
-    };
-
+    const showClothes = (data) => setClothes(data);
     const url = `${clothesURL}?_start=0&_end=3`;
     getJSON(url, 'Couldn\'t get clothes', showClothes);
   }, []);

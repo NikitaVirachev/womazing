@@ -20,7 +20,7 @@ const FeatureContainer = styled.div`
 const IconWindow = styled.div`
   width: 6.1rem;
   height: 6.1rem;
-  overflow: hidden;
+  ${'' /* overflow: hidden; */}
   position: relative;
 `;
 
@@ -29,9 +29,13 @@ const Icon = styled.div`
   width: ${(props) => (props.$width ? props.$width : '')};
   height: ${(props) => (props.$height ? props.$height : '')};
   position: absolute;
-  top: 50%;
+  ${
+  '' /* top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+}
+  top: ${(props) => (props.$top ? props.$top : '')};
+  right: ${(props) => (props.$right ? props.$right : '')};
 `;
 
 const Text = styled.div`
@@ -75,7 +79,13 @@ const Features = () => {
       </FeatureContainer>
       <FeatureContainer>
         <IconWindow>
-          <Icon $url={mdiIconURL} $width="7.8rem" $height="7.8rem" />
+          <Icon
+            $url={mdiIconURL}
+            $width="7.8rem"
+            $height="7.8rem"
+            $top="-1rem"
+            $right="-0.8rem"
+          />
         </IconWindow>
         <Text>
           <Title>Скорость</Title>
@@ -87,7 +97,13 @@ const Features = () => {
       </FeatureContainer>
       <FeatureContainer>
         <IconWindow>
-          <Icon $url={handIconURL} $width="6.3rem" $height="6.3rem" />
+          <Icon
+            $url={handIconURL}
+            $width="6.3rem"
+            $height="6.3rem"
+            $top="-0.2rem"
+            $right="-0.2rem"
+          />
         </IconWindow>
         <Text>
           <Title>Ответственность</Title>
