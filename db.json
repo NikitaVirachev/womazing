@@ -239,14 +239,6 @@
       "discount": null,
       "type": "coat",
       "url": "gs://womazing-217a2.appspot.com/clothes/Пальто UNIQLO.jpg"
-    },
-    {
-      "id": 31,
-      "name": "Пальто Sorelle",
-      "cost": 40,
-      "discount": null,
-      "type": "coat",
-      "url": "gs://womazing-217a2.appspot.com/clothes/Пальто Sorelle.jpg"
     }
   ]
 }
