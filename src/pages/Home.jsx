@@ -29,9 +29,13 @@ const Title = styled.h2`
   letter-spacing: 0.8px;
 `;
 
+const Main = styled.main`
+  padding-bottom: 13rem;
+`;
+
 const Home = () => {
   return (
-    <main>
+    <Main>
       <Background />
       <Column>
         <Hero />
@@ -48,7 +52,7 @@ const Home = () => {
           <About />
         </Section>
       </Column>
-    </main>
+    </Main>
   );
 };
 
