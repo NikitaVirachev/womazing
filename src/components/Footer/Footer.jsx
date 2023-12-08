@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
 
 import Column from '../../layouts/Column.jsx';
 import Navbar from '../Header/Navbar.jsx';
@@ -9,6 +8,7 @@ import InstagramURL from '../../assets/img/icons/instagram.svg';
 import FacebookURL from '../../assets/img/icons/facebook.svg';
 import TwitterURL from '../../assets/img/icons/twitter.svg';
 import VisaMastercardURL from '../../assets/img/icons/visa-mastercard.png';
+import StyledLink from '../StyledLink.jsx';
 
 const Text = css`
   color: #000;
@@ -113,28 +113,6 @@ const Links = styled.div`
   padding-left: 10.7rem;
 `;
 
-const StyledLink = styled(Link)`
-  ${Text}
-  text-decoration: none;
-  position: relative;
-
-  &::after {
-    content: '';
-    width: 100%;
-    height: 1px;
-    background: #000;
-    position: absolute;
-    bottom: -0.5rem;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-
-  &:hover::after {
-    opacity: 1;
-  }
-`;
-
 const Footer = () => {
   return (
     <FooterContainer>
@@ -144,17 +122,19 @@ const Footer = () => {
             <Logo />
             <Copyright>
               <p>© Все права защищены</p>
-              <StyledLink>Политика конфиденциальности</StyledLink>
-              <StyledLink>Публичная оферта</StyledLink>
+              <StyledLink $textStyles={Text}>
+                Политика конфиденциальности
+              </StyledLink>
+              <StyledLink $textStyles={Text}>Публичная оферта</StyledLink>
             </Copyright>
           </LeftContainer>
           <CenterContainer>
             <Navbar />
             <Links>
-              <StyledLink>Пальто</StyledLink>
-              <StyledLink>Свитшоты</StyledLink>
-              <StyledLink>Кардиганы</StyledLink>
-              <StyledLink>Толстовки</StyledLink>
+              <StyledLink $textStyles={Text}>Пальто</StyledLink>
+              <StyledLink $textStyles={Text}>Свитшоты</StyledLink>
+              <StyledLink $textStyles={Text}>Кардиганы</StyledLink>
+              <StyledLink $textStyles={Text}>Толстовки</StyledLink>
             </Links>
           </CenterContainer>
           <RightContainer>

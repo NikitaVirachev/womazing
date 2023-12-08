@@ -1,7 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import StyledLink from '../StyledLink.jsx';
+
+const StyledTextLink = css`
+  color: var(--CTA-color);
+  font-size: 1.7rem;
+  font-weight: 500;
+  line-height: 140%; /* 23.8px */
+  letter-spacing: 0.34px;
+`;
 
 const DescriptionContainer = styled.div`
   display: flex;
@@ -37,7 +45,9 @@ const AboutDescription = () => {
         Womazing ищет эти мелочи и создает прекрасные вещи, которые выгодно
         подчеркивают достоинства каждой девушки.
       </Text>
-      <StyledLink to={'/about'}>Подробнее о бренде</StyledLink>
+      <StyledLink to={'/about'} $textStyles={StyledTextLink} $color={'#cededf'}>
+        Подробнее о бренде
+      </StyledLink>
     </DescriptionContainer>
   );
 };
