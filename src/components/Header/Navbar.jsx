@@ -17,7 +17,10 @@ const StyledNavLink = styled(NavLink)`
   letter-spacing: 0.3px;
   text-decoration: none;
 
-  &.active {
+  transition: color 0.5s ease;
+
+  &.active,
+  &:hover {
     color: var(--CTA-color);
   }
 `;
