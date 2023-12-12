@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import Logo from './Logo.jsx';
 import Navbar from './Navbar.jsx';
@@ -9,29 +10,18 @@ import Cart from './Cart.jsx';
 const HeaderContainer = styled.div`
   width: 111rem;
   height: 2.8rem;
-
   display: grid;
-  grid-template-columns: auto 146px auto 170px auto 67px auto;
+  grid-template-columns: auto 14.6rem auto 17rem auto 6.7rem auto;
   align-items: center;
-
-  position: absolute;
-  z-index: 100;
-  top: 5.1rem;
-  left: 50%;
-  transform: translateX(-50%);
 `;
 
 const LocatedNavbar = styled.div`
   grid-column: ${(props) => (props.$column ? props.$column : '')};
 `;
 
-const Header = () => {
-  useEffect(() => {
-    // const headerObserver = new IntersectionObserver(callback);
-  }, []);
-
+const Header = (props) => {
   return (
-    <HeaderContainer>
+    <HeaderContainer id={props.id}>
       <Logo />
       <LocatedNavbar $column={3}>
         <Navbar />
@@ -44,6 +34,10 @@ const Header = () => {
       </LocatedNavbar>
     </HeaderContainer>
   );
+};
+
+Header.propTypes = {
+  id: PropTypes.string,
 };
 
 export default Header;
