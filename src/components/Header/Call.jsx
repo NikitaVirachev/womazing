@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 
 import TelephoneIcon from './TelephoneIcon.jsx';
+import { modalWindowsActions } from '../../hooks/modalWindowsSlice.jsx';
 
 const CallContainer = styled.div`
   color: #000;
@@ -17,9 +19,14 @@ const CallContainer = styled.div`
 `;
 
 const Call = () => {
+  const dispatch = useDispatch();
+
+  const openCallModalWindow = () =>
+    dispatch(modalWindowsActions.setCallModalWindow(true));
+
   return (
     <CallContainer>
-      <TelephoneIcon />
+      <TelephoneIcon onClick={openCallModalWindow} />
       <span>+7 (495) 823-54-12</span>
     </CallContainer>
   );

@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-const TelephoneIconContainer = styled.div`
+const TelephoneIconContainer = styled.button`
   width: 2.7rem;
   height: 2.7rem;
   display: inline-flex;
@@ -11,6 +12,7 @@ const TelephoneIconContainer = styled.div`
   cursor: pointer;
 
   background: inherit;
+  border: none;
 
   &:hover {
     background: var(--CTA-color);
@@ -30,9 +32,9 @@ const TelephoneIconContainer = styled.div`
   }
 `;
 
-const TelephoneIcon = () => {
+const TelephoneIcon = (props) => {
   return (
-    <TelephoneIconContainer>
+    <TelephoneIconContainer onClick={props.onClick}>
       <svg
         width="17"
         height="17"
@@ -74,6 +76,10 @@ const TelephoneIcon = () => {
       </svg>
     </TelephoneIconContainer>
   );
+};
+
+TelephoneIcon.propTypes = {
+  onClick: PropTypes.func,
 };
 
 export default TelephoneIcon;

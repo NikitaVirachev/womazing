@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import styled, { css } from 'styled-components';
+import { useSelector, useDispatch } from 'react-redux';
 
 import Header from '../components/Header/Header.jsx';
 import Footer from '../components/Footer/Footer.jsx';
+import ModalWindow from '../components/ModalWindow/ModalWindow.jsx';
+import { modalWindowsActions } from '../hooks/modalWindowsSlice.jsx';
 
 const RootContainer = styled.div`
   position: relative;
@@ -35,6 +38,10 @@ const HeaderWrapper = styled.div`
 
 const Root = () => {
   const [isFixed, setIsFixed] = useState(false);
+  const isModalWindowOpen = useSelector(
+    (state) => state.modalWindows.callModalWindow
+  );
+  const dispatch = useDispatch();
 
   const handleScroll = () => {
     const rootEl = document.getElementById('root');
@@ -52,8 +59,15 @@ const Root = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const closeModalWindow = () => {
+    dispatch(modalWindowsActions.setCallModalWindow(false));
+  };
+
   return (
     <RootContainer id="root">
+      {isModalWindowOpen && (
+        <ModalWindow onClose={closeModalWindow}></ModalWindow>
+      )}
       <HeaderWrapper $isFixed={isFixed}>
         <Header id="header" />
       </HeaderWrapper>
