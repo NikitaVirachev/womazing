@@ -7,6 +7,7 @@ import Header from '../components/Header/Header.jsx';
 import Footer from '../components/Footer/Footer.jsx';
 import ModalWindow from '../components/ModalWindow/ModalWindow.jsx';
 import { modalWindowsActions } from '../store/modalWindowsSlice.jsx';
+import CallForm from '../components/Form/CallForm.jsx';
 
 const RootContainer = styled.div`
   position: relative;
@@ -66,7 +67,12 @@ const Root = () => {
   return (
     <RootContainer id="root">
       {isModalWindowOpen && (
-        <ModalWindow onClose={closeModalWindow}></ModalWindow>
+        <ModalWindow
+          title="Заказать обратный звонок"
+          onClose={closeModalWindow}
+        >
+          <CallForm />
+        </ModalWindow>
       )}
       <HeaderWrapper $isFixed={isFixed}>
         <Header id="header" />

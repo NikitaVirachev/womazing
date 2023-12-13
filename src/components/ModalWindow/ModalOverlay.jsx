@@ -14,13 +14,15 @@ const ModalOverlayContainer = styled.div`
   display: inline-flex;
   padding: 7rem;
   flex-direction: column;
-  align-items: flex-start;
   gap: 3.5rem;
 
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1001;
+
+  background: #fff;
 `;
 
 const ModalOverlay = (props) => {

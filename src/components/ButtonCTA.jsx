@@ -14,6 +14,7 @@ const outlineStyles = css`
 
 const ButtonCTA = styled.button`
   display: inline-flex;
+  justify-content: center;
   padding: 2.2rem 5rem;
   background: var(--CTA-color);
   border: none;
