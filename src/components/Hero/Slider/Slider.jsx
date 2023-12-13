@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Indicator from '../../Slider/Indicator.jsx';
 import ButtonCTA from '../../ButtonCTA.jsx';
 import ArrowDawn from './ArrowDawn.jsx';
-import { heroSliderActions } from '../../../hooks/heroSliderSlice.jsx';
+import { heroSliderActions } from '../../../store/heroSliderSlice.jsx';
 
 const SliderContainer = styled.div`
   margin-top: 26.5rem;

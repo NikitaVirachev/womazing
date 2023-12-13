@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Header from '../components/Header/Header.jsx';
 import Footer from '../components/Footer/Footer.jsx';
 import ModalWindow from '../components/ModalWindow/ModalWindow.jsx';
-import { modalWindowsActions } from '../hooks/modalWindowsSlice.jsx';
+import { modalWindowsActions } from '../store/modalWindowsSlice.jsx';
 
 const RootContainer = styled.div`
   position: relative;
