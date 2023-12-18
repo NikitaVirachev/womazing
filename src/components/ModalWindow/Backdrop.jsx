@@ -7,9 +7,9 @@ const Backdrop = styled.div`
   height: 100%;
   background: rgba(110, 156, 159, 0.95);
 
-  animation: modalAnimation 0.5s ease;
+  animation: backdropAnimation 0.5s ease;
 
-  @keyframes modalAnimation {
+  @keyframes backdropAnimation {
     from {
       opacity: 0;
     }

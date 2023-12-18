@@ -19,10 +19,21 @@ const ModalOverlayContainer = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   z-index: 1001;
 
   background: #fff;
+
+  animation: modalAnimation 0.5s ease;
+
+  @keyframes modalAnimation {
+    from {
+      transform: translate(-50%, -50%) scale(0.25);
+    }
+    to {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
 `;
 
 const ModalOverlay = (props) => {
