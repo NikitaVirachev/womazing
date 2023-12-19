@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 import Input from '../Input.jsx';
 import ButtonCTA from '../../ButtonCTA.jsx';
@@ -15,6 +16,7 @@ const CallFormContainer = styled.form`
 `;
 
 const CallForm = (props) => {
+  const navigate = useNavigate();
   const { getJSON, error } = useHTTP();
 
   const {
@@ -57,16 +59,14 @@ const CallForm = (props) => {
 
     const acceptAnswer = (data) => {
       console.log(data);
-
       resetNameInput();
       resetEmailInput();
       resetNumberInput();
-
       props.onShowMessage();
     };
 
     const requestConfig = {
-      url: `${URL}/callback_orders`,
+      url: `${URL}/callback_ordrs`,
       method: 'POST',
       body: {
         name: enteredName,
@@ -77,7 +77,9 @@ const CallForm = (props) => {
     getJSON(requestConfig, 'Failed to register callback', acceptAnswer);
   };
 
-  if (error) throw error;
+  if (error) {
+    navigate('error', { replace: true, state: { error } });
+  }
 
   return (
     <CallFormContainer onSubmit={formSubmissionHandler}>
