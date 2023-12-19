@@ -7,7 +7,8 @@ import Header from '../components/Header/Header.jsx';
 import Footer from '../components/Footer/Footer.jsx';
 import ModalWindow from '../components/ModalWindow/ModalWindow.jsx';
 import { modalWindowsActions } from '../store/modalWindowsSlice.jsx';
-import CallForm from '../components/Form/CallForm.jsx';
+import CallForm from '../components/Form/Call/CallForm.jsx';
+import CallSuccess from '../components/Form/Call/CallSuccess.jsx';
 
 const RootContainer = styled.div`
   position: relative;
@@ -42,6 +43,7 @@ const Root = () => {
   const isModalWindowOpen = useSelector(
     (state) => state.modalWindows.callModalWindow
   );
+  const [isCallFormSubmitted, setIsCallFormSubmitted] = useState(false);
   const dispatch = useDispatch();
 
   const handleScroll = () => {
@@ -60,18 +62,28 @@ const Root = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const closeModalWindow = () => {
+  const closeModalWindowHandler = () => {
     dispatch(modalWindowsActions.setCallModalWindow(false));
   };
+
+  const closeCallSuccessHandler = () => {
+    closeModalWindowHandler();
+    setIsCallFormSubmitted(false);
+  };
+
+  const modalWindowTitle = isCallFormSubmitted
+    ? 'Отлично! Мы скоро вам перезвоним.'
+    : 'Заказать обратный звонок';
 
   return (
     <RootContainer id="root">
       {isModalWindowOpen && (
-        <ModalWindow
-          title="Заказать обратный звонок"
-          onClose={closeModalWindow}
-        >
-          <CallForm />
+        <ModalWindow title={modalWindowTitle} onClose={closeModalWindowHandler}>
+          {isCallFormSubmitted ? (
+            <CallSuccess onClose={closeCallSuccessHandler} />
+          ) : (
+            <CallForm onShowMessage={() => setIsCallFormSubmitted(true)} />
+          )}
         </ModalWindow>
       )}
       <HeaderWrapper $isFixed={isFixed}>

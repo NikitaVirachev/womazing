@@ -23,7 +23,7 @@ const StyledInput = styled.input`
 
 const Line = styled.div`
   height: 1px;
-  background: #000;
+  background: ${(props) => (props.$error ? '#ef5350' : '#000')};
 `;
 
 const Input = (props) => {
@@ -36,7 +36,7 @@ const Input = (props) => {
         onChange={props.onChange}
         type={props.type}
       />
-      <Line />
+      <Line $error={props.hasError} />
     </InputContainer>
   );
 };
@@ -47,6 +47,7 @@ Input.propTypes = {
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   type: PropTypes.string,
+  hasError: PropTypes.bool,
 };
 
 export default Input;
