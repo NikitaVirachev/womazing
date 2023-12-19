@@ -28,8 +28,8 @@ const NewCollection = () => {
 
   useEffect(() => {
     const showClothes = (data) => setClothes(data);
-    const url = `${clothesURL}?_start=0&_end=3`;
-    getJSON(url, 'Couldn\'t get clothes', showClothes);
+    const requestConfig = { url: `${clothesURL}?_start=0&_end=3` };
+    getJSON(requestConfig, 'Couldn\'t get clothes', showClothes);
   }, []);
 
   const navigate = useNavigate();

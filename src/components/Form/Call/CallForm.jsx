@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import Input from '../Input.jsx';
 import ButtonCTA from '../../ButtonCTA.jsx';
 import useInput from '../../../hooks/useInput.jsx';
+import useHTTP from '../../../hooks/useHTTP.jsx';
+import { URL } from '../../../db/constants.js';
 
 const CallFormContainer = styled.form`
   display: flex;
@@ -13,6 +15,8 @@ const CallFormContainer = styled.form`
 `;
 
 const CallForm = (props) => {
+  const { getJSON, error } = useHTTP();
+
   const {
     value: enteredName,
     isValid: enteredNameIsValid,
@@ -47,17 +51,33 @@ const CallForm = (props) => {
   if (enteredNameIsValid && enteredEmailIsValid && enteredNumberIsValid) {
     formIsValid = true;
   }
-  console.log(formIsValid);
 
   const formSubmissionHandler = (event) => {
     event.preventDefault();
 
-    resetNameInput();
-    resetEmailInput();
-    resetNumberInput();
+    const acceptAnswer = (data) => {
+      console.log(data);
 
-    props.onShowMessage();
+      resetNameInput();
+      resetEmailInput();
+      resetNumberInput();
+
+      props.onShowMessage();
+    };
+
+    const requestConfig = {
+      url: `${URL}/callback_orders`,
+      method: 'POST',
+      body: {
+        name: enteredName,
+        email: enteredEmail,
+        phone: enteredNumber,
+      },
+    };
+    getJSON(requestConfig, 'Failed to register callback', acceptAnswer);
   };
+
+  if (error) throw error;
 
   return (
     <CallFormContainer onSubmit={formSubmissionHandler}>
