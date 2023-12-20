@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import qualityIconURL from '../../assets/img/icons/quality.svg';
 import mdiIconURL from '../../assets/img/icons/mdi.svg';
 import handIconURL from '../../assets/img/icons/hand.svg';
+import PlainText from '../Typography/PlainText.jsx';
+import TertiaryHeader from '../Typography/TertiaryHeader.jsx';
 
 const FeaturesContainer = styled.div`
   display: flex;
@@ -39,20 +41,7 @@ const Text = styled.div`
   gap: 2.4rem;
 `;
 
-const Title = styled.h3`
-  color: #000;
-  font-size: 2.5rem;
-  font-weight: 500;
-  line-height: 140%; /* 35px */
-  letter-spacing: 0.5px;
-`;
-
-const Description = styled.p`
-  color: #000;
-  font-size: 1.7rem;
-  font-weight: 500;
-  line-height: 140%; /* 23.8px */
-  letter-spacing: 0.34px;
+const Description = styled.div`
   width: 30.5rem;
   height: 11.5rem;
 `;
@@ -65,10 +54,12 @@ const Features = () => {
           <Icon $url={qualityIconURL} $width="6.1rem" $height="6.1rem" />
         </IconWindow>
         <Text>
-          <Title>Качество</Title>
+          <TertiaryHeader>Качество</TertiaryHeader>
           <Description>
-            Наши профессионалы работают на лучшем оборудовании для пошива одежды
-            беспрецедентного качества
+            <PlainText>
+              Наши профессионалы работают на лучшем оборудовании для пошива
+              одежды беспрецедентного качества
+            </PlainText>
           </Description>
         </Text>
       </FeatureContainer>
@@ -83,10 +74,12 @@ const Features = () => {
           />
         </IconWindow>
         <Text>
-          <Title>Скорость</Title>
+          <TertiaryHeader>Скорость</TertiaryHeader>
           <Description>
-            Благодаря отлаженной системе в Womazing мы можем отшивать до 20-ти
-            единиц продукции в наших собственных цехах
+            <PlainText>
+              Благодаря отлаженной системе в Womazing мы можем отшивать до 20-ти
+              единиц продукции в наших собственных цехах
+            </PlainText>
           </Description>
         </Text>
       </FeatureContainer>
@@ -101,10 +94,12 @@ const Features = () => {
           />
         </IconWindow>
         <Text>
-          <Title>Ответственность</Title>
+          <TertiaryHeader>Ответственность</TertiaryHeader>
           <Description>
-            Мы заботимся о людях и планете. Безотходное производство и
-            комфортные условия труда - все это Womazing
+            <PlainText>
+              Мы заботимся о людях и планете. Безотходное производство и
+              комфортные условия труда - все это Womazing
+            </PlainText>
           </Description>
         </Text>
       </FeatureContainer>

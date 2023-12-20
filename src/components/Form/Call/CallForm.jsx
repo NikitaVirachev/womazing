@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import Input from '../Input.jsx';
 import ButtonCTA from '../../ButtonCTA.jsx';
 import useInput from '../../../hooks/useInput.jsx';
 import useHTTP from '../../../hooks/useHTTP.jsx';
 import { URL } from '../../../db/constants.js';
+import { modalWindowsActions } from '../../../store/modalWindowsSlice.jsx';
 
 const CallFormContainer = styled.form`
   display: flex;
@@ -17,7 +19,15 @@ const CallFormContainer = styled.form`
 
 const CallForm = (props) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { getJSON, error } = useHTTP();
+
+  useEffect(() => {
+    if (error) {
+      navigate('error', { replace: true, state: { error } });
+      dispatch(modalWindowsActions.setCallModalWindow(false));
+    }
+  }, [error]);
 
   const {
     value: enteredName,
@@ -76,10 +86,6 @@ const CallForm = (props) => {
     };
     getJSON(requestConfig, 'Failed to register callback', acceptAnswer);
   };
-
-  if (error) {
-    navigate('error', { replace: true, state: { error } });
-  }
 
   return (
     <CallFormContainer onSubmit={formSubmissionHandler}>

@@ -12,6 +12,10 @@ import CallSuccess from '../components/Form/Call/CallSuccess.jsx';
 
 const RootContainer = styled.div`
   position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  justify-items: stretch;
 `;
 
 const Absolute = css`
@@ -47,7 +51,7 @@ const Root = () => {
   const dispatch = useDispatch();
 
   const handleScroll = () => {
-    const rootEl = document.getElementById('root');
+    const rootEl = document.getElementById('root-content');
     const header = document.getElementById('header');
     const headerHeight = header.getBoundingClientRect().height;
     if (rootEl && window.scrollY >= rootEl.offsetTop + headerHeight) {
@@ -76,7 +80,7 @@ const Root = () => {
     : 'Заказать обратный звонок';
 
   return (
-    <RootContainer id="root">
+    <RootContainer id="root-content">
       {isModalWindowOpen && (
         <ModalWindow title={modalWindowTitle} onClose={closeModalWindowHandler}>
           {isCallFormSubmitted ? (
@@ -90,7 +94,7 @@ const Root = () => {
         <Header id="header" />
       </HeaderWrapper>
       <Outlet />
-      <Footer />
+      <Footer id="footer" />
     </RootContainer>
   );
 };
