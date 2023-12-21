@@ -35,7 +35,7 @@ const NewCollection = () => {
   const navigate = useNavigate();
 
   const btnClickHandler = () => {
-    navigate('/store');
+    navigate('/shop');
   };
 
   return (

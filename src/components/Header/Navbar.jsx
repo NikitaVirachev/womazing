@@ -29,7 +29,7 @@ const Navbar = () => {
   return (
     <NavContainer>
       <StyledNavLink to={'/'}>Главная</StyledNavLink>
-      <StyledNavLink to={'/store'}>Магазин</StyledNavLink>
+      <StyledNavLink to={'/shop'}>Магазин</StyledNavLink>
       <StyledNavLink to={'/about'}>О бренде</StyledNavLink>
       <StyledNavLink to={'/contacts'}>Контакты</StyledNavLink>
     </NavContainer>

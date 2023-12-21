@@ -108,7 +108,7 @@ const Slider = () => {
           </Slide>
         </Slides>
       </SlidesWindow>
-      <StyledLink to={'/store'}>
+      <StyledLink to={'/shop'}>
         <ArrowDawn />
         <ButtonCTA $isOutline={false}>Открыть магазин</ButtonCTA>
       </StyledLink>

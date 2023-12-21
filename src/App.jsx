@@ -5,6 +5,7 @@ import { createGlobalStyle } from 'styled-components';
 import Root from './layouts/Root.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import Home from './pages/Home.jsx';
+import Shop from './pages/Shop.jsx';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: 'error', element: <ErrorPage /> },
+      { path: 'shop', element: <Shop /> },
     ],
   },
 ]);
