@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import Input from '../Input.jsx';
-import ButtonCTA from '../../ButtonCTA.jsx';
-import useInput from '../../../hooks/useInput.jsx';
-import useHTTP from '../../../hooks/useHTTP.jsx';
+import Input from '../Input.js';
+import ButtonCTA from '../../ButtonCTA.js';
+import useInput from '../../../hooks/useInput.js';
+import useHTTP from '../../../hooks/useHTTP.js';
 import { URL } from '../../../db/constants.js';
-import { modalWindowsActions } from '../../../store/modalWindowsSlice.jsx';
+import { modalWindowsActions } from '../../../store/modalWindowsSlice.js';
 
 const CallFormContainer = styled.form`
   display: flex;

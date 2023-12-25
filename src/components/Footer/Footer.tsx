@@ -1,14 +1,14 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import Column from '../../layouts/Column.jsx';
-import Navbar from '../Header/Navbar.jsx';
-import Logo from '../Header/Logo.jsx';
+import Column from '../../layouts/Column.js';
+import Navbar from '../Header/Navbar.js';
+import Logo from '../Header/Logo.js';
 import InstagramURL from '../../assets/img/icons/instagram.svg';
 import FacebookURL from '../../assets/img/icons/facebook.svg';
 import TwitterURL from '../../assets/img/icons/twitter.svg';
 import VisaMastercardURL from '../../assets/img/icons/visa-mastercard.png';
-import StyledLink from '../StyledLink.jsx';
+import StyledLink from '../StyledLink.js';
 
 const Text = css`
   color: #000;
@@ -18,7 +18,9 @@ const Text = css`
   letter-spacing: 0.26px;
 `;
 
-const FooterContainer = styled.div`
+const FooterContainer = styled.div.attrs((props) => ({
+  id: props.id, // это пробрасывает id в элемент div
+}))`
   background: #f1eadc;
   height: 36.3rem;
   padding-top: 10.4rem;
@@ -61,19 +63,23 @@ const SocialNetworks = styled.div`
   align-items: center;
 `;
 
-const InstagramIcon = styled.a`
+interface IconProps {
+  $url: string;
+}
+
+const InstagramIcon = styled.a<IconProps>`
   background: url(${(props) => props.$url}) center/cover no-repeat;
   width: 2.2rem;
   height: 2.2rem;
 `;
 
-const FacebookIcon = styled.a`
+const FacebookIcon = styled.a<IconProps>`
   background: url(${(props) => props.$url}) center/cover no-repeat;
   width: 2.1rem;
   height: 2.1rem;
 `;
 
-const TwitterIcon = styled.a`
+const TwitterIcon = styled.a<IconProps>`
   background: url(${(props) => props.$url}) center/cover no-repeat;
   width: 2.3rem;
   height: 2.3rem;
@@ -113,28 +119,42 @@ const Links = styled.div`
   padding-left: 10.7rem;
 `;
 
-const Footer = () => {
+type FooterProps = {
+  id: string;
+};
+
+const Footer = ({ id }: FooterProps) => {
   return (
-    <FooterContainer>
+    <FooterContainer id={id}>
       <Column>
         <FooterHeader>
           <LeftContainer>
             <Logo />
             <Copyright>
               <p>© Все права защищены</p>
-              <StyledLink $textStyles={Text}>
+              <StyledLink to="" $textStyles={Text} $color="">
                 Политика конфиденциальности
               </StyledLink>
-              <StyledLink $textStyles={Text}>Публичная оферта</StyledLink>
+              <StyledLink to="" $textStyles={Text} $color="">
+                Публичная оферта
+              </StyledLink>
             </Copyright>
           </LeftContainer>
           <CenterContainer>
             <Navbar />
             <Links>
-              <StyledLink $textStyles={Text}>Пальто</StyledLink>
-              <StyledLink $textStyles={Text}>Свитшоты</StyledLink>
-              <StyledLink $textStyles={Text}>Кардиганы</StyledLink>
-              <StyledLink $textStyles={Text}>Толстовки</StyledLink>
+              <StyledLink to="" $textStyles={Text} $color="">
+                Пальто
+              </StyledLink>
+              <StyledLink to="" $textStyles={Text} $color="">
+                Свитшоты
+              </StyledLink>
+              <StyledLink to="" $textStyles={Text} $color="">
+                Кардиганы
+              </StyledLink>
+              <StyledLink to="" $textStyles={Text} $color="">
+                Толстовки
+              </StyledLink>
             </Links>
           </CenterContainer>
           <RightContainer>
@@ -145,17 +165,17 @@ const Footer = () => {
             <SocialNetworks>
               <InstagramIcon
                 href="https://www.instagram.com/"
-                target="_blanck"
+                target="_blank"
                 $url={InstagramURL}
               />
               <FacebookIcon
                 href="https://www.facebook.com/"
-                target="_blanck"
+                target="_blank"
                 $url={FacebookURL}
               />
               <TwitterIcon
                 href="https://twitter.com/"
-                target="_blanck"
+                target="_blank"
                 $url={TwitterURL}
               />
             </SocialNetworks>

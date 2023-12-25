@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import Logo from './Logo.jsx';
-import Navbar from './Navbar.jsx';
+import Logo from './Logo.js';
+import Navbar from './Navbar.js';
 import Call from './Call.jsx';
 import Cart from './Cart.jsx';
 

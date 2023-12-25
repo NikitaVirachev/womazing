@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import ButtonCTA from '../../ButtonCTA.jsx';
+import ButtonCTA from '../../ButtonCTA.js';
 
 const CallSuccessContainer = styled.form`
   display: flex;

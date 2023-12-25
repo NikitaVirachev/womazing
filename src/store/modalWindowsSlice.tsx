@@ -1,6 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-const initialState = {
+interface ModalWindowState {
+  callModalWindow: boolean;
+}
+
+const initialState: ModalWindowState = {
   callModalWindow: false,
 };
 
@@ -8,7 +12,7 @@ const modalWindowsSlice = createSlice({
   name: 'Modal Window',
   initialState,
   reducers: {
-    setCallModalWindow(state, action) {
+    setCallModalWindow(state, action: PayloadAction<boolean>) {
       state.callModalWindow = action.payload;
     },
   },

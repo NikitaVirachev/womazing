@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-import Backdrop from './Backdrop.jsx';
-import ModalOverlay from './ModalOverlay.jsx';
+import Backdrop from './Backdrop.js';
+import ModalOverlay from './ModalOverlay.js';
 
 const ModalWindow = (props) => {
   return (

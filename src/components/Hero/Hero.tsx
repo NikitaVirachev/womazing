@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Slider from './Slider/Slider.jsx';
-import Photos from './Photos.jsx';
+import Photos from './Photos.js';
 
 const HeroContainer = styled.section`
   display: grid;

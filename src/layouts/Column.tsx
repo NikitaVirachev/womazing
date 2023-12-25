@@ -11,7 +11,11 @@ const Wrapper = styled.div`
   gap: 13rem;
 `;
 
-const Column = ({ children }) => {
+interface ColumnProps {
+  children?: React.ReactNode;
+}
+
+const Column = ({ children }: ColumnProps) => {
   return <Wrapper>{children}</Wrapper>;
 };
 

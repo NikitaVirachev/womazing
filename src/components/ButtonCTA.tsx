@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 const outlineStyles = css`
@@ -12,7 +11,11 @@ const outlineStyles = css`
   }
 `;
 
-const ButtonCTA = styled.button`
+type ButtonCTAProps = {
+  $isOutline: boolean;
+};
+
+const ButtonCTA = styled.button<ButtonCTAProps>`
   display: inline-flex;
   justify-content: center;
   padding: 2.2rem 5rem;
@@ -34,10 +37,5 @@ const ButtonCTA = styled.button`
 
   ${(props) => props.$isOutline && outlineStyles};
 `;
-
-ButtonCTA.propTypes = {
-  children: PropTypes.node,
-  $isOutline: PropTypes.bool,
-};
 
 export default ButtonCTA;

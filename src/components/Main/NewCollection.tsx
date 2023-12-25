@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
-import useHTTP from '../../hooks/useHTTP.jsx';
+import useHTTP from '../../hooks/useHTTP.js';
 import { clothesURL } from '../../db/constants.js';
-import ButtonCTA from '../ButtonCTA.jsx';
-import Product from '../Products/Product.jsx';
+import ButtonCTA from '../ButtonCTA.js';
+import Product from '../Products/Product.js';
 
 const NewCollectionContainer = styled.div`
   display: flex;
@@ -29,7 +29,7 @@ const NewCollection = () => {
   useEffect(() => {
     const showClothes = (data) => setClothes(data);
     const requestConfig = { url: `${clothesURL}?_start=0&_end=3` };
-    getJSON(requestConfig, 'Couldn\'t get clothes', showClothes);
+    getJSON(requestConfig, "Couldn't get clothes", showClothes);
   }, []);
 
   const navigate = useNavigate();

@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-import Indicator from '../../Slider/Indicator.jsx';
-import ButtonCTA from '../../ButtonCTA.jsx';
+import Indicator from '../../Slider/Indicator.js';
+import ButtonCTA from '../../ButtonCTA.js';
 import ArrowDawn from './ArrowDawn.jsx';
-import { heroSliderActions } from '../../../store/heroSliderSlice.jsx';
+import { heroSliderActions } from '../../../store/heroSliderSlice.js';
 
 const SliderContainer = styled.div`
   margin-top: 26.5rem;

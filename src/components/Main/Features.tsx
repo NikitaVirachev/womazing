@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import qualityIconURL from '../../assets/img/icons/quality.svg';
 import mdiIconURL from '../../assets/img/icons/mdi.svg';
 import handIconURL from '../../assets/img/icons/hand.svg';
-import PlainText from '../Typography/PlainText.jsx';
-import TertiaryHeader from '../Typography/TertiaryHeader.jsx';
+import PlainText from '../Typography/PlainText.js';
+import TertiaryHeader from '../Typography/TertiaryHeader.js';
 
 const FeaturesContainer = styled.div`
   display: flex;

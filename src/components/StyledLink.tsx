@@ -1,7 +1,12 @@
-import styled from 'styled-components';
+import styled, { CSSProp } from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const StyledLink = styled(Link)`
+interface StyledLinkProps {
+  $color: string;
+  $textStyles: CSSProp;
+}
+
+const StyledLink = styled(Link)<StyledLinkProps>`
   text-decoration: none;
   position: relative;
 

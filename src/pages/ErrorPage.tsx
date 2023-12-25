@@ -18,7 +18,7 @@ const ErrorPageContent = styled.div`
 
 const ErrorPage = () => {
   const location = useLocation();
-  const error = location.state?.error; // Это строка, а не объект
+  const error = location.state?.error;
   const errorMessage = error?.message ? error.message : 'Неизвестная ошибка';
 
   return (

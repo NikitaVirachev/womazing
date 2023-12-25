@@ -7,6 +7,7 @@ import Header from '../components/Header/Header.jsx';
 import Footer from '../components/Footer/Footer.jsx';
 import ModalWindow from '../components/ModalWindow/ModalWindow.jsx';
 import { modalWindowsActions } from '../store/modalWindowsSlice.jsx';
+import { RootState } from '../store/store.js';
 import CallForm from '../components/Form/Call/CallForm.jsx';
 import CallSuccess from '../components/Form/Call/CallSuccess.jsx';
 
@@ -29,7 +30,11 @@ const Fixed = css`
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.05);
 `;
 
-const HeaderWrapper = styled.div`
+interface HeaderWrapperProps {
+  $isFixed: boolean;
+}
+
+const HeaderWrapper = styled.div<HeaderWrapperProps>`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -45,7 +50,7 @@ const HeaderWrapper = styled.div`
 const Root = () => {
   const [isFixed, setIsFixed] = useState(false);
   const isModalWindowOpen = useSelector(
-    (state) => state.modalWindows.callModalWindow
+    (state: RootState) => state.modalWindows.callModalWindow
   );
   const [isCallFormSubmitted, setIsCallFormSubmitted] = useState(false);
   const dispatch = useDispatch();
@@ -53,7 +58,7 @@ const Root = () => {
   const handleScroll = () => {
     const rootEl = document.getElementById('root-content');
     const header = document.getElementById('header');
-    const headerHeight = header.getBoundingClientRect().height;
+    const headerHeight = header?.getBoundingClientRect().height ?? 0;
     if (rootEl && window.scrollY >= rootEl.offsetTop + headerHeight) {
       setIsFixed(true);
     } else {
