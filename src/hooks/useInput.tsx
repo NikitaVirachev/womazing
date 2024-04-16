@@ -1,23 +1,23 @@
 import { useState } from 'react';
 
-type ValidatorFunction = (value: string) => boolean;
-
-const useInput = (validateValue: ValidatorFunction) => {
+const useInput = (validateValue: (value: string) => boolean) => {
   const [enteredValue, setEnteredValue] = useState('');
   const [isTouched, setIsTouched] = useState(false);
 
   const valueIsValid = validateValue(enteredValue);
   const hasError = !valueIsValid && isTouched;
 
-  const valueChangeHandler = (event) => {
+  const valueChangeHandler = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ): void => {
     setEnteredValue(event.target.value);
   };
 
-  const inputBlurHandler = () => {
+  const inputBlurHandler = (): void => {
     setIsTouched(true);
   };
 
-  const reset = () => {
+  const reset = (): void => {
     setEnteredValue('');
     setIsTouched(false);
   };
