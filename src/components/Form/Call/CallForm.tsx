@@ -17,7 +17,11 @@ const CallFormContainer = styled.form`
   gap: 3.5rem;
 `;
 
-const CallForm = (props) => {
+type CallFormProps = {
+  onShowMessage: () => void;
+};
+
+const CallForm = (props: CallFormProps) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { getJSON, error } = useHTTP();
@@ -64,7 +68,7 @@ const CallForm = (props) => {
     formIsValid = true;
   }
 
-  const formSubmissionHandler = (event: React.FormEvent<SubmitEvent>) => {
+  const formSubmissionHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const acceptAnswer = (data: string): void => {
