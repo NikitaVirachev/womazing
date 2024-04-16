@@ -55,7 +55,7 @@ const CallForm = (props) => {
     inputBlurHandler: numberBlurHandler,
     reset: resetNumberInput,
   } = useInput(
-    (value) => !!value.trim().match(/(?:\+7|8)-?9\d{2}-?\d{3}-?\d{2}-?\d{2}/i)
+    (value) => !!value.trim().match(/(?:\+7|8)-?9\d{2}-?\d{3}-?\d{2}-?\d{2}/i),
   );
 
   let formIsValid = false;
@@ -64,10 +64,10 @@ const CallForm = (props) => {
     formIsValid = true;
   }
 
-  const formSubmissionHandler = (event) => {
+  const formSubmissionHandler = (event: React.FormEvent<SubmitEvent>) => {
     event.preventDefault();
 
-    const acceptAnswer = (data) => {
+    const acceptAnswer = (data: string): void => {
       console.log(data);
       resetNameInput();
       resetEmailInput();
@@ -78,11 +78,11 @@ const CallForm = (props) => {
     const requestConfig = {
       url: `${URL}/callback_ordrs`,
       method: 'POST',
-      body: {
+      body: JSON.stringify({
         name: enteredName,
         email: enteredEmail,
         phone: enteredNumber,
-      },
+      }),
     };
     getJSON(requestConfig, 'Failed to register callback', acceptAnswer);
   };

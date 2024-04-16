@@ -1,13 +1,20 @@
 import { useState } from 'react';
 
+export interface RequestConfig {
+  url: string;
+  method?: string;
+  headers?: HeadersInit;
+  body?: BodyInit | null;
+}
+
 const useHTTP = () => {
-  const [isLoading, setIsLoading] = useState(null);
-  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState<null | boolean>(null);
+  const [error, setError] = useState<null | Error>(null);
 
   const getJSON = async (
-    requestConfig,
+    requestConfig: RequestConfig,
     errorMsg = 'Something went wrong',
-    consume
+    consume: (data: string) => void,
   ) => {
     setIsLoading(true);
     try {
@@ -20,7 +27,11 @@ const useHTTP = () => {
       const data = await response.json();
       consume(data);
     } catch (error) {
-      setError(error);
+      if (error instanceof Error) {
+        setError(error);
+      } else {
+        setError(new Error('An unknown error occurred'));
+      }
     }
     setIsLoading(false);
   };
