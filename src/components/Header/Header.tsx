@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 import Logo from './Logo.js';
 import Navbar from './Navbar.js';
 import Call from './Call.jsx';
 import Cart from './Cart.jsx';
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.div<HeaderProps>`
   width: 111rem;
   height: 2.8rem;
   display: grid;
@@ -15,11 +14,19 @@ const HeaderContainer = styled.div`
   align-items: center;
 `;
 
-const LocatedNavbar = styled.div`
+type LocatedNavbarProps = {
+  $column: number;
+};
+
+const LocatedNavbar = styled.div<LocatedNavbarProps>`
   grid-column: ${(props) => (props.$column ? props.$column : '')};
 `;
 
-const Header = (props) => {
+type HeaderProps = {
+  id: number;
+};
+
+const Header = (props: HeaderProps) => {
   return (
     <HeaderContainer id={props.id}>
       <Logo />
@@ -34,10 +41,6 @@ const Header = (props) => {
       </LocatedNavbar>
     </HeaderContainer>
   );
-};
-
-Header.propTypes = {
-  id: PropTypes.string,
 };
 
 export default Header;
