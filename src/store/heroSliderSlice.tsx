@@ -1,6 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-const initialState = {
+interface HeroSliderState {
+  slidesCount: number;
+  currentSlide: number;
+}
+
+const initialState: HeroSliderState = {
   slidesCount: 3,
   currentSlide: 1,
 };
@@ -9,7 +14,7 @@ const heroSliderSlice = createSlice({
   name: 'heroSlider',
   initialState,
   reducers: {
-    setCurrentSlide(state, action) {
+    setCurrentSlide(state, action: PayloadAction<number>) {
       state.currentSlide = action.payload;
     },
   },
