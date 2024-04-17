@@ -2,7 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import DressURL from '../../assets/img/icons/dress.svg';
 
-const DressIcon = styled.div`
+type DressIconProps = {
+  $url: string;
+};
+
+const DressIcon = styled.div<DressIconProps>`
   background: url(${(props) => (props.$url ? props.$url : '')});
   width: 2.5rem;
   height: 2.5rem;
