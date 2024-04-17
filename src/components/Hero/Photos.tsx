@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '../../hooks/hooks';
 
 import MainPhotos1URL from '../../assets/img/pictures/main-photos-1.jpg';
 import MainPhotos2URL from '../../assets/img/pictures/main-photos-2.jpg';
@@ -21,7 +21,11 @@ const MainPhotosWindow = styled.div`
   position: relative;
 `;
 
-const Slides = styled.div`
+type SlidesProps = {
+  $currentSlide: number;
+};
+
+const Slides = styled.div<SlidesProps>`
   display: flex;
 
   position: absolute;
@@ -30,7 +34,11 @@ const Slides = styled.div`
     `translateX(calc(${$currentSlide - 1} * -43.4rem))`};
 `;
 
-const MainPhotos = styled.div`
+type PhotosProps = {
+  $url: string;
+};
+
+const MainPhotos = styled.div<PhotosProps>`
   width: 43.4rem;
   height: 65.2rem;
   background: url(${(props) => (props.$url ? props.$url : '')}) center/cover
@@ -47,7 +55,7 @@ const SecondaryPhotosContainer = styled.div`
   left: 31.8rem;
 `;
 
-const SecondaryPhotos = styled.div`
+const SecondaryPhotos = styled.div<PhotosProps>`
   width: 19.7rem;
   height: 29.6rem;
   background: url(${(props) => (props.$url ? props.$url : '')}) center/cover
@@ -67,7 +75,7 @@ const TertiaryPhotosContainer = styled.div`
   right: 34.4rem;
 `;
 
-const TertiaryPhotos = styled.div`
+const TertiaryPhotos = styled.div<PhotosProps>`
   width: 38rem;
   height: 57rem;
   background: url(${(props) => (props.$url ? props.$url : '')}) center/cover
@@ -79,7 +87,7 @@ const TertiaryPhotos = styled.div`
 `;
 
 const Photos = () => {
-  const curSlide = useSelector((state) => state.heroSlider.currentSlide);
+  const curSlide = useAppSelector((state) => state.heroSlider.currentSlide);
 
   return (
     <PhotosContainer>
