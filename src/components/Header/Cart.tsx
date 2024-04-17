@@ -3,7 +3,11 @@ import styled from 'styled-components';
 
 import CartURL from '../../assets/img/icons/shopping-bags.svg';
 
-const CartIcon = styled.div`
+type CartIconProps = {
+  $url: string;
+};
+
+const CartIcon = styled.div<CartIconProps>`
   background: url(${(props) => (props.$url ? props.$url : '')});
   width: 2.4rem;
   height: 2.4rem;
