@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 import ButtonCTA from '../../ButtonCTA.js';
 
@@ -10,7 +9,11 @@ const CallSuccessContainer = styled.form`
   align-items: center;
 `;
 
-const CallSuccess = (props) => {
+type CallSuccessProps = {
+  onClose: () => void;
+};
+
+const CallSuccess = (props: CallSuccessProps) => {
   return (
     <CallSuccessContainer>
       <ButtonCTA $isOutline={true} onClick={props.onClose}>
@@ -18,10 +21,6 @@ const CallSuccess = (props) => {
       </ButtonCTA>
     </CallSuccessContainer>
   );
-};
-
-CallSuccess.propTypes = {
-  onClose: PropTypes.func,
 };
 
 export default CallSuccess;
