@@ -21,12 +21,25 @@ const StyledInput = styled.input`
   }
 `;
 
-const Line = styled.div`
+type LineProps = {
+  $error: boolean;
+};
+
+const Line = styled.div<LineProps>`
   height: 1px;
   background: ${(props) => (props.$error ? '#ef5350' : '#000')};
 `;
 
-const Input = (props) => {
+type InputProps = {
+  placeholder: string;
+  type: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur: () => void;
+  value: string;
+  hasError: boolean;
+};
+
+const Input = (props: InputProps) => {
   return (
     <InputContainer>
       <StyledInput
