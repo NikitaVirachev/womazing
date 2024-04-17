@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 const TelephoneIconContainer = styled.button`
   width: 2.7rem;
@@ -32,7 +31,11 @@ const TelephoneIconContainer = styled.button`
   }
 `;
 
-const TelephoneIcon = (props) => {
+type TelephoneIconProps = {
+  onClick: () => void;
+};
+
+const TelephoneIcon = (props: TelephoneIconProps) => {
   return (
     <TelephoneIconContainer onClick={props.onClick}>
       <svg
@@ -76,10 +79,6 @@ const TelephoneIcon = (props) => {
       </svg>
     </TelephoneIconContainer>
   );
-};
-
-TelephoneIcon.propTypes = {
-  onClick: PropTypes.func,
 };
 
 export default TelephoneIcon;

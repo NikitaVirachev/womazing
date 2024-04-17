@@ -21,8 +21,9 @@ const CallContainer = styled.div`
 const Call = () => {
   const dispatch = useDispatch();
 
-  const openCallModalWindow = () =>
+  const openCallModalWindow = () => {
     dispatch(modalWindowsActions.setCallModalWindow(true));
+  };
 
   return (
     <CallContainer>
