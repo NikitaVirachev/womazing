@@ -3,7 +3,11 @@ import styled from 'styled-components';
 
 import ArrowDawnURL from '../../../assets/img/icons/arrowDawn.svg';
 
-const AroowDawnIcon = styled.div`
+type AroowDawnIcon = {
+  $url: string;
+};
+
+const AroowDawnIcon = styled.div<AroowDawnIcon>`
   background: url(${(props) => (props.$url ? props.$url : '')});
   width: 6.7rem;
   height: 6.7rem;
