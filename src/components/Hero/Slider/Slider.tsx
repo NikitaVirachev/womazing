@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
 
 import Indicator from '../../Slider/Indicator.js';
 import ButtonCTA from '../../ButtonCTA.js';
 import ArrowDawn from './ArrowDawn.jsx';
 import { heroSliderActions } from '../../../store/heroSliderSlice.js';
+import { useAppSelector, useAppDispatch } from '../../../hooks/hooks.js';
 
 const SliderContainer = styled.div`
   margin-top: 26.5rem;
@@ -40,7 +40,11 @@ const SlidesWindow = styled.div`
   position: relative;
 `;
 
-const Slides = styled.div`
+type SlidesProps = {
+  $currentSlide: number;
+};
+
+const Slides = styled.div<SlidesProps>`
   display: flex;
 
   position: absolute;
@@ -77,9 +81,9 @@ const Description = styled.p`
 `;
 
 const Slider = () => {
-  const dispatch = useDispatch();
-  const curSlide = useSelector((state) => state.heroSlider.currentSlide);
-  const slidesCount = useSelector((state) => state.heroSlider.slidesCount);
+  const dispatch = useAppDispatch();
+  const curSlide = useAppSelector((state) => state.heroSlider.currentSlide);
+  const slidesCount = useAppSelector((state) => state.heroSlider.slidesCount);
 
   return (
     <SliderContainer>
