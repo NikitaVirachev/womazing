@@ -26,7 +26,15 @@ const IconWindow = styled.div`
   position: relative;
 `;
 
-const Icon = styled.div`
+type IconComponent = {
+  $url: string;
+  $width: string;
+  $height: string;
+  $top?: string;
+  $right?: string;
+};
+
+const Icon = styled.div<IconComponent>`
   background: url(${(props) => (props.$url ? props.$url : '')});
   width: ${(props) => (props.$width ? props.$width : '')};
   height: ${(props) => (props.$height ? props.$height : '')};
