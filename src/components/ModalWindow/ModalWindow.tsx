@@ -1,29 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 
 import Backdrop from './Backdrop.js';
 import ModalOverlay from './ModalOverlay.js';
+import { ModalOverlayProps } from './ModalOverlay.js';
 
-const ModalWindow = (props) => {
+interface ModalWindowProps extends ModalOverlayProps {
+  onClose: () => void;
+}
+
+const ModalWindow = (props: ModalWindowProps) => {
+  const backdropRoot = document.querySelector('#backdrop-root');
+  const overlayRoot = document.querySelector('#overlay-root');
+
   return (
     <React.Fragment>
-      {ReactDOM.createPortal(
-        <Backdrop onClick={props.onClose} />,
-        document.querySelector('#backdrop-root')
-      )}
-      {ReactDOM.createPortal(
-        <ModalOverlay title={props.title}>{props.children}</ModalOverlay>,
-        document.querySelector('#overlay-root')
-      )}
+      {backdropRoot &&
+        ReactDOM.createPortal(
+          <Backdrop onClick={props.onClose} />,
+          backdropRoot
+        )}
+      {overlayRoot &&
+        ReactDOM.createPortal(
+          <ModalOverlay title={props.title}>{props.children}</ModalOverlay>,
+          overlayRoot
+        )}
     </React.Fragment>
   );
-};
-
-ModalWindow.propTypes = {
-  onClose: PropTypes.func,
-  title: PropTypes.string,
-  children: PropTypes.node,
 };
 
 export default ModalWindow;

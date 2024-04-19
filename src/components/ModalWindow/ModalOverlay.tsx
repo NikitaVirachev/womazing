@@ -35,10 +35,10 @@ const ModalOverlayContainer = styled.div`
   }
 `;
 
-type ModalOverlayProps = {
+export interface ModalOverlayProps {
   title: string;
   children: React.ReactNode;
-};
+}
 
 const ModalOverlay = (props: ModalOverlayProps) => {
   return (
