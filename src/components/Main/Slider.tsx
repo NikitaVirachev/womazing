@@ -22,7 +22,11 @@ const SliderWindow = styled.div`
   position: relative;
 `;
 
-const Slides = styled.div`
+type SlidesProps = {
+  $currentSlide: number;
+};
+
+const Slides = styled.div<SlidesProps>`
   display: flex;
 
   position: absolute;
@@ -31,7 +35,11 @@ const Slides = styled.div`
     `translateX(calc(${$currentSlide - 1} * -${WIDTH}))`};
 `;
 
-const Slide = styled.div`
+type SlideProps = {
+  $url: string;
+};
+
+const Slide = styled.div<SlideProps>`
   width: ${WIDTH};
   height: ${HEIGHT};
 
@@ -72,7 +80,9 @@ const Slider = () => {
     <SliderContainer>
       <LeftArrow>
         <Arrow
-          onChangeSlider={() => setCurSlide((prevState) => prevState - 1)}
+          onChangeSlider={() =>
+            setCurSlide((prevState: number): number => prevState - 1)
+          }
           isDisabled={curSlide === 1}
         />
       </LeftArrow>
@@ -85,7 +95,9 @@ const Slider = () => {
       </SliderWindow>
       <RightArrow>
         <Arrow
-          onChangeSlider={() => setCurSlide((prevState) => prevState + 1)}
+          onChangeSlider={() =>
+            setCurSlide((prevState: number): number => prevState + 1)
+          }
           isDisabled={curSlide === slidesCount}
         />
       </RightArrow>
@@ -93,7 +105,7 @@ const Slider = () => {
       <IndicatorContainer>
         <Indicator
           curRectangle={curSlide}
-          onChangeSlide={(slide) => setCurSlide(slide)}
+          onChangeSlide={(slide: number): void => setCurSlide(slide)}
           slidesCount={slidesCount}
           mainColor="rgba(255, 255, 255, 0.36)"
           activeColor="#fff"
