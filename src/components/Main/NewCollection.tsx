@@ -22,12 +22,21 @@ const ButtonCTAContainer = styled.div`
   text-align: center;
 `;
 
+interface Clothes {
+  id: number;
+  name: string;
+  cost: number;
+  discount: number;
+  type: string;
+  url: string;
+}
+
 const NewCollection = () => {
   const { getJSON } = useHTTP();
-  const [clothes, setClothes] = useState(null);
+  const [clothes, setClothes] = useState<null | Clothes[]>(null);
 
   useEffect(() => {
-    const showClothes = (data) => setClothes(data);
+    const showClothes = (data: Clothes[]) => setClothes(data);
     const requestConfig = { url: `${clothesURL}?_start=0&_end=3` };
     getJSON(requestConfig, "Couldn't get clothes", showClothes);
   }, []);
@@ -42,7 +51,7 @@ const NewCollection = () => {
     <NewCollectionContainer>
       <Goods>
         {clothes &&
-          clothes.map((item) => (
+          clothes.map((item: Clothes) => (
             <Product
               key={item.id}
               name={item.name}

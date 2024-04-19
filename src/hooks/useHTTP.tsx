@@ -11,10 +11,10 @@ const useHTTP = () => {
   const [isLoading, setIsLoading] = useState<null | boolean>(null);
   const [error, setError] = useState<null | Error>(null);
 
-  const getJSON = async (
+  const getJSON = async <T,>(
     requestConfig: RequestConfig,
     errorMsg = 'Something went wrong',
-    consume: (data: string) => void,
+    consume: (data: T) => void
   ) => {
     setIsLoading(true);
     try {
@@ -24,7 +24,7 @@ const useHTTP = () => {
         body: requestConfig.body,
       });
       if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);
-      const data = await response.json();
+      const data: T = await response.json();
       consume(data);
     } catch (error) {
       if (error instanceof Error) {
