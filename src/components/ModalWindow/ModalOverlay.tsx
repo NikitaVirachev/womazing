@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 const Title = styled.h3`
   color: #000;
@@ -36,18 +35,18 @@ const ModalOverlayContainer = styled.div`
   }
 `;
 
-const ModalOverlay = (props) => {
+type ModalOverlayProps = {
+  title: string;
+  children: React.ReactNode;
+};
+
+const ModalOverlay = (props: ModalOverlayProps) => {
   return (
     <ModalOverlayContainer>
       <Title>{props.title}</Title>
       {props.children}
     </ModalOverlayContainer>
   );
-};
-
-ModalOverlay.propTypes = {
-  title: PropTypes.string,
-  children: PropTypes.node,
 };
 
 export default ModalOverlay;
