@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 import Rectangle from './Rectangle.jsx';
 
@@ -8,7 +7,15 @@ const IndicatorContainer = styled.div`
   display: inline-flex;
 `;
 
-const Indicator = (props) => {
+type IndicatorProps = {
+  curRectangle: number;
+  onChangeSlide: (slide: number) => void;
+  slidesCount: number;
+  mainColor: string;
+  activeColor: string;
+};
+
+const Indicator = (props: IndicatorProps) => {
   return (
     <IndicatorContainer>
       {Array.from({ length: props.slidesCount }, (_, index) => (
@@ -23,14 +30,6 @@ const Indicator = (props) => {
       ))}
     </IndicatorContainer>
   );
-};
-
-Indicator.propTypes = {
-  curRectangle: PropTypes.number,
-  onChangeSlide: PropTypes.func,
-  slidesCount: PropTypes.number,
-  mainColor: PropTypes.string,
-  activeColor: PropTypes.string,
 };
 
 export default Indicator;
