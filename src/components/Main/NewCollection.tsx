@@ -22,12 +22,12 @@ const ButtonCTAContainer = styled.div`
   text-align: center;
 `;
 
-interface Clothes {
-  id: number;
+export interface Clothes {
+  id?: number;
   name: string;
   cost: number;
-  discount: number;
-  type: string;
+  discount: number | null;
+  type?: string;
   url: string;
 }
 
@@ -55,8 +55,8 @@ const NewCollection = () => {
             <Product
               key={item.id}
               name={item.name}
-              cost={String(item.cost)}
-              discount={String(item.discount)}
+              cost={item.cost}
+              discount={item.discount}
               url={item.url}
             />
           ))}

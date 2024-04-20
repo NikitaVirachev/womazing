@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { useNavigate } from 'react-router';
 import { ref, getDownloadURL } from 'firebase/storage';
+import { FirebaseError } from 'firebase/app';
 
 import overlaArrowURL from '../../assets/img/icons/overlay-arrow.svg';
 import { storage } from '../../libs/firebase';
+import { Clothes } from '../Main/NewCollection';
 
 const ProductContainer = styled.div`
   display: flex;
@@ -13,7 +14,11 @@ const ProductContainer = styled.div`
   gap: 2.4rem;
 `;
 
-const Overlay = styled.div`
+type OverlayProps = {
+  $url: string;
+};
+
+const Overlay = styled.div<OverlayProps>`
   position: absolute;
   top: 0;
   left: 0;
@@ -83,45 +88,48 @@ const NewCost = styled.span`
   ${Cost};
 `;
 
-const Product = (props) => {
-  const [url, setUrl] = useState(null);
+const Product = (props: Clothes) => {
+  const [url, setUrl] = useState<string | null>(null);
   const navigate = useNavigate();
 
-  const urlDB = props.url;
+  const urlDB: string = props.url;
 
   useEffect(() => {
-    const getImgURL = async (urlDB) => {
+    const getImgURL = async (urlDB: string) => {
       const gsReference = ref(storage, urlDB);
 
       try {
-        const url = await getDownloadURL(gsReference);
+        const url: string = await getDownloadURL(gsReference);
         setUrl(url);
       } catch (error) {
         // A full list of error codes is available at
         // https://firebase.google.com/docs/storage/web/handle-errors
-        switch (error.code) {
-        case 'storage/object-not-found':
-          // File doesn't exist
-          break;
-        case 'storage/unauthorized':
-          // User doesn't have permission to access the object
-          break;
-        case 'storage/canceled':
-          // User canceled the upload
-          break;
+        if (error instanceof FirebaseError) {
+          switch (error.code) {
+            case 'storage/object-not-found':
+              // File doesn't exist
+              break;
+            case 'storage/unauthorized':
+              // User doesn't have permission to access the object
+              break;
+            case 'storage/canceled':
+              // User canceled the upload
+              break;
 
-          // ...
+            // ...
 
-        case 'storage/unknown':
-          // Unknown error occurred, inspect the server response
-          break;
+            case 'storage/unknown':
+              // Unknown error occurred, inspect the server response
+              break;
+          }
         }
       }
     };
+
     getImgURL(urlDB);
   }, [urlDB]);
 
-  const imageClickHandler = () => {
+  const imageClickHandler = (): void => {
     navigate('/item');
   };
 
@@ -134,8 +142,8 @@ const Product = (props) => {
       <Description>
         <Title>{props.name}</Title>
         <Costs>
-          {props.discount !== 'null' && <OldCost>{`$${props.cost}`}</OldCost>}
-          {props.discount !== 'null' ? (
+          {props.discount !== null && <OldCost>{`$${props.cost}`}</OldCost>}
+          {props.discount !== null ? (
             <NewCost>{`$${props.cost - props.discount}`}</NewCost>
           ) : (
             <NewCost>{`$${props.cost}`}</NewCost>
@@ -144,13 +152,6 @@ const Product = (props) => {
       </Description>
     </ProductContainer>
   );
-};
-
-Product.propTypes = {
-  name: PropTypes.string,
-  cost: PropTypes.string,
-  discount: PropTypes.string,
-  url: PropTypes.string,
 };
 
 export default Product;
