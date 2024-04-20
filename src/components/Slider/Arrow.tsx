@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 const StyledArrow = styled.button`
   width: 2.9rem;
@@ -34,17 +33,17 @@ const ArrowSvg = () => (
   </svg>
 );
 
-const Arrow = (props) => {
+type ArrowProps = {
+  onChangeSlider: () => void;
+  isDisabled: boolean;
+};
+
+const Arrow = (props: ArrowProps) => {
   return (
     <StyledArrow onClick={props.onChangeSlider} disabled={props.isDisabled}>
       <ArrowSvg />
     </StyledArrow>
   );
-};
-
-Arrow.propTypes = {
-  onChangeSlider: PropTypes.func,
-  isDisabled: PropTypes.bool,
 };
 
 export default Arrow;
