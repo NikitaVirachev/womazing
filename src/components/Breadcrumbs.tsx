@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import { PlainTextStyles } from './Typography/PlainText.jsx';
 
-const StyledLink = styled(Link)`
+type StyledLink = {
+  $isCurrent: boolean;
+}
+
+const StyledLink = styled(Link)<StyledLink>`
   color: ${(props) => (props.$isCurrent ? '#909090' : '#000')};
   text-decoration: none;
 `;
@@ -17,10 +20,16 @@ const BreadcrumbsContainer = styled.div`
   gap: 1.3rem;
 `;
 
-const Breadcrumbs = ({ breadcrumbsList }) => {
+type Breadcrumb = {
+  id: number;
+  path: string;
+  name: string;
+}
+
+const Breadcrumbs = ({ breadcrumbsList }: { breadcrumbsList: Breadcrumb[] }) => {
   return (
     <BreadcrumbsContainer>
-      {breadcrumbsList.map((breadcrumb, index, array) => {
+      {breadcrumbsList.map((breadcrumb: Breadcrumb, index: number, array: Breadcrumb[]) => {
         if (index !== array.length - 1) {
           return (
             <React.Fragment key={breadcrumb.id}>
@@ -44,10 +53,6 @@ const Breadcrumbs = ({ breadcrumbsList }) => {
       })}
     </BreadcrumbsContainer>
   );
-};
-
-Breadcrumbs.propTypes = {
-  breadcrumbsList: PropTypes.array,
 };
 
 export default Breadcrumbs;
