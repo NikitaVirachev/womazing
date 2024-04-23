@@ -8,8 +8,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
-    'plugin:prettier/recommended', // Добавляет `eslint-plugin-prettier` и `eslint-config-prettier`
-    'prettier/@typescript-eslint',
+    'prettier',
   ],
   overrides: [
     {
