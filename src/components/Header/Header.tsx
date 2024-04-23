@@ -23,7 +23,7 @@ const LocatedNavbar = styled.div<LocatedNavbarProps>`
 `;
 
 type HeaderProps = {
-  id: number;
+  id: string;
 };
 
 const Header = (props: HeaderProps) => {
