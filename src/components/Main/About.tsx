@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Slider from './Slider.js';
-import AboutDescription from './AboutDescription.js';
+import Slider from './Slider.tsx';
+import AboutDescription from './AboutDescription.tsx';
 
 const AboutContainer = styled.div`
   display: flex;

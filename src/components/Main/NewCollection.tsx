@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
-import useHTTP from '../../hooks/useHTTP.js';
-import { clothesURL } from '../../db/constants.js';
-import ButtonCTA from '../ButtonCTA.js';
-import Product from '../Products/Product.js';
+import useHTTP from '../../hooks/useHTTP.tsx';
+import { clothesURL } from '../../db/constants.ts';
+import ButtonCTA from '../ButtonCTA.tsx';
+import Product from '../Products/Product.tsx';
 
 const NewCollectionContainer = styled.div`
   display: flex;

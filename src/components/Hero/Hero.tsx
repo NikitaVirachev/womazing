@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Slider from './Slider/Slider.jsx';
-import Photos from './Photos.js';
+import Slider from './Slider/Slider.tsx';
+import Photos from './Photos.tsx';
 
 const HeroContainer = styled.section`
   display: grid;

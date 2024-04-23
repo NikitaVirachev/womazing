@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 
-import TelephoneIcon from './TelephoneIcon.js';
-import { modalWindowsActions } from '../../store/modalWindowsSlice.js';
+import TelephoneIcon from './TelephoneIcon.tsx';
+import { modalWindowsActions } from '../../store/modalWindowsSlice.tsx';
 
 const CallContainer = styled.div`
   color: #000;

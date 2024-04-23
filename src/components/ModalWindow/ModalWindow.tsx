@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Backdrop from './Backdrop.js';
-import ModalOverlay from './ModalOverlay.js';
-import { ModalOverlayProps } from './ModalOverlay.js';
+import Backdrop from './Backdrop.tsx';
+import ModalOverlay from './ModalOverlay.tsx';
+import { ModalOverlayProps } from './ModalOverlay.tsx';
 
 interface ModalWindowProps extends ModalOverlayProps {
   onClose: () => void;

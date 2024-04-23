@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Logo from './Logo.js';
-import Navbar from './Navbar.js';
-import Call from './Call.jsx';
-import Cart from './Cart.jsx';
+import Logo from './Logo.tsx';
+import Navbar from './Navbar.tsx';
+import Call from './Call.tsx';
+import Cart from './Cart.tsx';
 
 const HeaderContainer = styled.div<HeaderProps>`
   width: 111rem;

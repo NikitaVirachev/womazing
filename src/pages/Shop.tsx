@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Column from '../layouts/Column.jsx';
-import PrimaryHeader from '../components/Typography/PrimaryHeader.jsx';
-import Breadcrumbs, {Breadcrumb} from '../components/Breadcrumbs.jsx';
+import Column from '../layouts/Column.tsx';
+import PrimaryHeader from '../components/Typography/PrimaryHeader.tsx';
+import Breadcrumbs, {Breadcrumb} from '../components/Breadcrumbs.tsx';
 
 const Main = styled.main`
   padding-top: 26.9rem;

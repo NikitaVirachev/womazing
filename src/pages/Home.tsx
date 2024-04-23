@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Hero from '../components/Hero/Hero.jsx';
-import Column from '../layouts/Column.jsx';
-import NewCollection from '../components/Main/NewCollection.jsx';
-import Features from '../components/Main/Features.jsx';
-import About from '../components/Main/About.jsx';
-import SecondaryHeader from '../components/Typography/SecondaryHeader.jsx';
+import Hero from '../components/Hero/Hero.tsx';
+import Column from '../layouts/Column.tsx';
+import NewCollection from '../components/Main/NewCollection.tsx';
+import Features from '../components/Main/Features.tsx';
+import About from '../components/Main/About.tsx';
+import SecondaryHeader from '../components/Typography/SecondaryHeader.tsx';
 
 const Background = styled.div`
   background: linear-gradient(to right, white 55%, #f1eadc 45%);

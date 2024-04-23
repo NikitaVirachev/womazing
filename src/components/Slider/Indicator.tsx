@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Rectangle from './Rectangle.jsx';
+import Rectangle from './Rectangle.tsx';
 
 const IndicatorContainer = styled.div`
   display: inline-flex;

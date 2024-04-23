@@ -3,13 +3,13 @@ import { Outlet } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 
-import Header from '../components/Header/Header.jsx';
-import Footer from '../components/Footer/Footer.jsx';
-import ModalWindow from '../components/ModalWindow/ModalWindow.jsx';
-import { modalWindowsActions } from '../store/modalWindowsSlice.jsx';
-import { RootState } from '../store/store.js';
-import CallForm from '../components/Form/Call/CallForm.jsx';
-import CallSuccess from '../components/Form/Call/CallSuccess.jsx';
+import Header from '../components/Header/Header.tsx';
+import Footer from '../components/Footer/Footer.tsx';
+import ModalWindow from '../components/ModalWindow/ModalWindow.tsx';
+import { modalWindowsActions } from '../store/modalWindowsSlice.tsx';
+import { RootState } from '../store/store.ts';
+import CallForm from '../components/Form/Call/CallForm.tsx';
+import CallSuccess from '../components/Form/Call/CallSuccess.tsx';
 
 const RootContainer = styled.div`
   position: relative;

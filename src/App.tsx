@@ -2,10 +2,10 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 
-import Root from './layouts/Root.jsx';
-import ErrorPage from './pages/ErrorPage.jsx';
-import Home from './pages/Home.jsx';
-import Shop from './pages/Shop.jsx';
+import Root from './layouts/Root.tsx';
+import ErrorPage from './pages/ErrorPage.tsx';
+import Home from './pages/Home.tsx';
+import Shop from './pages/Shop.tsx';
 
 const GlobalStyle = createGlobalStyle`
   :root {

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 
-import Indicator from '../Slider/Indicator.js';
+import Indicator from '../Slider/Indicator.tsx';
 import slideURL1 from '../../assets/img/pictures/slider-1.jpg';
 import slideURL2 from '../../assets/img/pictures/slider-2.jpg';
 import slideURL3 from '../../assets/img/pictures/slider-3.jpg';
-import Arrow from '../Slider/Arrow.js';
+import Arrow from '../Slider/Arrow.tsx';
 
 const WIDTH = '72.9rem';
 const HEIGHT = '48.7rem';

@@ -1,14 +1,14 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import Column from '../../layouts/Column.js';
-import Navbar from '../Header/Navbar.js';
-import Logo from '../Header/Logo.js';
+import Column from '../../layouts/Column.tsx';
+import Navbar from '../Header/Navbar.tsx';
+import Logo from '../Header/Logo.tsx';
 import InstagramURL from '../../assets/img/icons/instagram.svg';
 import FacebookURL from '../../assets/img/icons/facebook.svg';
 import TwitterURL from '../../assets/img/icons/twitter.svg';
 import VisaMastercardURL from '../../assets/img/icons/visa-mastercard.png';
-import StyledLink from '../StyledLink.js';
+import StyledLink from '../StyledLink.tsx';
 
 const Text = css`
   color: #000;

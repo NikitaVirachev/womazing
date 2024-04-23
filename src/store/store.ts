@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import heroSliderReducer from './heroSliderSlice.jsx';
-import modalWindowsReducer from './modalWindowsSlice.jsx';
+import heroSliderReducer from './heroSliderSlice.tsx';
+import modalWindowsReducer from './modalWindowsSlice.tsx';
 
 export const store = configureStore({
   reducer: { heroSlider: heroSliderReducer, modalWindows: modalWindowsReducer },

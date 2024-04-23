@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import ButtonCTA from '../../ButtonCTA.js';
+import ButtonCTA from '../../ButtonCTA.tsx';
 
 const CallSuccessContainer = styled.form`
   display: flex;

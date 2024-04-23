@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import Indicator from '../../Slider/Indicator.js';
-import ButtonCTA from '../../ButtonCTA.js';
-import ArrowDawn from './ArrowDawn.jsx';
-import { heroSliderActions } from '../../../store/heroSliderSlice.js';
-import { useAppSelector, useAppDispatch } from '../../../hooks/hooks.js';
+import Indicator from '../../Slider/Indicator.tsx';
+import ButtonCTA from '../../ButtonCTA.tsx';
+import ArrowDawn from './ArrowDawn.tsx';
+import { heroSliderActions } from '../../../store/heroSliderSlice.tsx';
+import { useAppSelector, useAppDispatch } from '../../../hooks/hooks.ts';
 
 const SliderContainer = styled.div`
   margin-top: 26.5rem;

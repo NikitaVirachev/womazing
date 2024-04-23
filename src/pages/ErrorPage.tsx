@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
 
-import Column from '../layouts/Column.jsx';
-import SecondaryHeader from '../components/Typography/SecondaryHeader.jsx';
-import PlainText from '../components/Typography/PlainText.jsx';
+import Column from '../layouts/Column.tsx';
+import SecondaryHeader from '../components/Typography/SecondaryHeader.tsx';
+import PlainText from '../components/Typography/PlainText.tsx';
 
 const ErrorPageContainer = styled.div`
   padding-top: 20rem;

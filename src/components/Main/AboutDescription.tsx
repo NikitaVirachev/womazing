@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import StyledLink from '../StyledLink.js';
+import StyledLink from '../StyledLink.tsx';
 
 const StyledTextLink = css`
   color: var(--CTA-color);
