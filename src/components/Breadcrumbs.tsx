@@ -20,8 +20,8 @@ const BreadcrumbsContainer = styled.div`
   gap: 1.3rem;
 `;
 
-type Breadcrumb = {
-  id: number;
+export interface Breadcrumb {
+  id: string;
   path: string;
   name: string;
 }

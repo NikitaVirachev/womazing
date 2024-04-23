@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Column from '../layouts/Column.jsx';
 import PrimaryHeader from '../components/Typography/PrimaryHeader.jsx';
-import Breadcrumbs from '../components/Breadcrumbs.jsx';
+import Breadcrumbs, {Breadcrumb} from '../components/Breadcrumbs.jsx';
 
 const Main = styled.main`
   padding-top: 26.9rem;
@@ -17,7 +17,7 @@ const Title = styled.div`
 `;
 
 const Shop = () => {
-  const BreadcrumbsArray = [
+  const BreadcrumbsArray: Breadcrumb[] = [
     { id: 'Breadcrumbs1', name: 'Главная', path: '/' },
     { id: 'Breadcrumbs2', name: 'Магазин', path: '' },
   ];
