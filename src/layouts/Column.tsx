@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -17,10 +16,6 @@ interface ColumnProps {
 
 const Column = ({ children }: ColumnProps) => {
   return <Wrapper>{children}</Wrapper>;
-};
-
-Column.propTypes = {
-  children: PropTypes.node,
 };
 
 export default Column;
