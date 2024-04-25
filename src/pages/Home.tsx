@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import Hero from '../components/Hero/Hero.tsx';
 import Column from '../layouts/Column.tsx';
+import Section from '../layouts/Section.tsx';
+import Main from '../layouts/Main.tsx';
 import NewCollection from '../components/Main/NewCollection.tsx';
 import Features from '../components/Main/Features.tsx';
 import About from '../components/Main/About.tsx';
@@ -14,16 +16,6 @@ const Background = styled.div`
   width: 100%;
   height: 82.6rem;
   z-index: -1;
-`;
-
-const Section = styled.section`
-  display: flex;
-  flex-direction: column;
-  gap: 9.2rem;
-`;
-
-const Main = styled.main`
-  padding-bottom: 13rem;
 `;
 
 const Home = () => {
