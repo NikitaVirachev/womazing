@@ -50,7 +50,7 @@ const HeaderWrapper = styled.div<HeaderWrapperProps>`
 const Root = () => {
   const [isFixed, setIsFixed] = useState(false);
   const isModalWindowOpen = useSelector(
-    (state: RootState) => state.modalWindows.callModalWindow
+    (state: RootState) => state.modalWindows.callModalWindow,
   );
   const [isCallFormSubmitted, setIsCallFormSubmitted] = useState(false);
   const dispatch = useDispatch();
