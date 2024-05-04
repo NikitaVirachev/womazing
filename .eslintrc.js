@@ -8,7 +8,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
-    'prettier/@typescript-eslint',
+    'prettier',
   ],
   overrides: [
     {
@@ -29,10 +29,6 @@ module.exports = {
   plugins: ['@typescript-eslint', 'react', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
-    indent: ['error', 2],
-    'linebreak-style': ['error', 'windows'],
-    quotes: ['error', 'single'],
-    semi: ['error', 'always'],
     '@typescript-eslint/no-var-requires': 'off',
   },
 };
