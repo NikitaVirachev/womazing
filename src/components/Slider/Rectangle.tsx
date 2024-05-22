@@ -1,8 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
-const StyledRectangle = styled.div`
+type StyledRectangleProps = {
+  $isActive?: boolean;
+  $activeColor: string;
+  $mainColor?: string;
+};
+
+const StyledRectangle = styled.div<StyledRectangleProps>`
   width: 3rem;
   height: 0.4rem;
   background: ${(props) =>
@@ -10,7 +15,7 @@ const StyledRectangle = styled.div`
   transition: all 0.5s ease;
 `;
 
-const RectangleContainer = styled.button`
+const RectangleContainer = styled.button<StyledRectangleProps>`
   padding: 0.6rem;
   cursor: pointer;
   border: none;
@@ -18,11 +23,19 @@ const RectangleContainer = styled.button`
 
   &:hover ${StyledRectangle} {
     background: ${(props) =>
-    props.$activeColor ? props.$activeColor : '#000'};
+      props.$activeColor ? props.$activeColor : '#000'};
   }
 `;
 
-const Rectangle = (props) => {
+export interface RectangleProps {
+  isCurrent: boolean;
+  onClick: (slide: number) => void;
+  number: number;
+  mainColor: string;
+  activeColor: string;
+}
+
+const Rectangle = (props: RectangleProps) => {
   const onClickHandler = () => {
     props.onClick(props.number);
   };
@@ -39,14 +52,6 @@ const Rectangle = (props) => {
       />
     </RectangleContainer>
   );
-};
-
-Rectangle.propTypes = {
-  isCurrent: PropTypes.bool,
-  onClick: PropTypes.func,
-  number: PropTypes.number,
-  mainColor: PropTypes.string,
-  activeColor: PropTypes.string,
 };
 
 export default Rectangle;
