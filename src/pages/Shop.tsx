@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Outlet } from 'react-router-dom';
 
 import Column from '../layouts/Column.tsx';
 import Section from '../layouts/Section.tsx';
@@ -35,6 +36,7 @@ const Shop = () => {
 
         <Section>
           <Categories />
+          <Outlet />
         </Section>
       </Column>
     </Main>

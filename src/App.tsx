@@ -6,6 +6,7 @@ import Root from './layouts/Root.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 import Home from './pages/Home.tsx';
 import Shop from './pages/Shop.tsx';
+import Goods from './components/Assortment/Goods.tsx';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -40,7 +41,17 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: 'error', element: <ErrorPage /> },
-      { path: 'shop', element: <Shop /> },
+      {
+        path: 'shop',
+        element: <Shop />,
+        children: [
+          { index: true, element: <Goods category="all" /> },
+          { path: 'coats', element: <Goods category="coats" /> },
+          { path: 'sweatshirts', element: <Goods category="sweatshirts" /> },
+          { path: 'cardigans', element: <Goods category="cardigans" /> },
+          { path: 'hoodies', element: <Goods category="hoodies" /> },
+        ],
+      },
     ],
   },
 ]);
