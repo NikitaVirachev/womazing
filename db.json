@@ -1,5 +1,6 @@
 {
   "callback_orders": [],
+  "numberOfClothes": 30,
   "clothes": [
     {
       "id": 1,
