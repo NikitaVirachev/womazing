@@ -22,6 +22,7 @@ const StyledNavLink = styled(NavLink)`
   &.active,
   &:hover {
     color: var(--CTA-color);
+    font-weight: 700;
   }
 `;
 
